@@ -18,6 +18,8 @@ spec = importlib.util.spec_from_file_location("drivers", HERE / "drivers.py")
 d = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(d)
 
+# These mirror --ink, --board, --crimson, --emerald and --gold in docs/lap-chart/lap-chart.css
+# (and the same constants in tools/lap-chart/build.py). Change all three places together.
 INK = "#171512"
 BOARD = "#EFE3C8"
 CRIMSON = "#B8232A"

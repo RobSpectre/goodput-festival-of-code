@@ -1,5 +1,15 @@
 /* Goodput Festival of Code: the Hand-Inked Lap Chart.
-   Aged board, four inks laid flat. Every question gets its own chart. No gradients, no shadows. */
+   Aged board and four inks. Every question gets its own chart.
+
+   The rules this stylesheet keeps:
+   - Colour: every colour is one of the seven custom properties below, laid flat.
+     No gradients, no shadows, no opacity tints. The one texture is the board's tooth.
+   - Type: every static size is a --t-* step; both ends of every fluid size are ramp values.
+   - Lines: every border, rule, underline and focus ring is one of the four --line weights.
+   - The charts are drawn by tools/lap-chart/build.py and the portraits by
+     tools/lap-chart-drivers.py. Their colours are written into the SVG as literals that
+     mirror --ink, --board, --crimson, --gold and --emerald; their lettering and stroke
+     widths are sized on the drawings, in drawing units, not here. */
 
 @font-face { font-family: "Londrina Solid"; src: url("fonts/londrina-solid-900-latin.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Londrina Solid"; src: url("fonts/londrina-solid-400-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
@@ -9,39 +19,49 @@
 @font-face { font-family: "Averia Serif Libre"; src: url("fonts/averia-serif-libre-700-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
-  /* the board and its four inks */
+  /* the board and its four inks, with one thinned value for each ground */
   --board: #EFE3C8;
   --ink: #171512;
   --crimson: #B8232A;
   --gold: #E3A81C;
   --emerald: #1E6B4A;
-  --ink-soft: #4A4337;     /* ink thinned, for second-rank text on the board */
+  --ink-soft: #4A4337;     /* ink thinned, for second-rank text on the board and on gold */
+  --board-soft: #9D9583;   /* board thinned, for placeholder text on the ink plate */
 
   /* three hands */
   --f-title: "Londrina Solid", "Arial Narrow", sans-serif;      /* fat hand-cut capitals */
   --f-hand: "Dekko", "Comic Sans MS", cursive;                  /* the drafting hand, always in capitals */
-  --f-text: "Averia Serif Libre", Georgia, serif;               /* ink-soft prose */
+  --f-text: "Averia Serif Libre", Georgia, serif;               /* a soft-edged serif for prose */
 
-  /* type ramp: every static size is one of these steps; fluid sizes run between two ramp values.
-     Lettering inside the charts is sized on the drawing itself. */
+  /* type ramp. Static steps: */
   --t-hand-s: .875rem;     /* 14px small capitals: legend terms, the menu label */
   --t-small: 1rem;         /* 16px notes, hints, colophon */
   --t-hand: 1.125rem;      /* 18px the drafting hand: captions, buttons */
   --t-body: 1.1875rem;     /* 19px */
   --t-lede: 1.5rem;        /* 24px */
   --t-name: 2rem;          /* 32px names and racing numbers */
-  /* fluid roles, written out where used:
-     question clamp(2.5rem, 5.2vw, 4.5rem)
-     title    clamp(3.5rem, 6.9vw, 6.5rem) */
+  /* Fluid roles, written out where they are used, so the heading sizes stay readable to tools.
+     Their ends are ramp values too:
+       date     clamp(2rem, 3.1vw, 3rem)       2rem is --t-name
+       question clamp(2.5rem, 5.2vw, 4.5rem)
+       title    clamp(3.5rem, 6.9vw, 6.5rem)
+     On phones the date and the title keep the same ends and take a steeper slope. */
+
+  /* line weights */
+  --line-heavy: 3px;       /* focus rings, and an underline under the pointer */
+  --line: 2.5px;           /* keylines: plates, the head of the sheet, buttons, portrait squares */
+  --line-mid: 2px;         /* frames and fields inside a plate: the menu box, the forecast frame, the tag */
+  --line-fine: 1.5px;      /* ruled leaders, caption rules and link underlines */
 
   --gutter: clamp(20px, 4.4vw, 64px);
   --pad-y: clamp(64px, 8vw, 116px);
   --bar-h: 62px;
-  --line: 2.5px;
 
   --ease-out: cubic-bezier(.16, 1, .3, 1);
 
-  /* the tooth of the board */
+  /* the tooth of the board: two noise tiles. Their fleck colours live inside the data URIs.
+     The light fleck (.94 .89 .78) mirrors --board. The dark fleck (.32 .24 .12, a brown, #523D1F)
+     mirrors no token: it is the grain of the paper, not an ink, and is used nowhere else. */
   --tooth: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .24 0 0 0 0 .12 0 0 0 .34 -.13'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --tooth-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .78 0 0 0 .3 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -68,10 +88,10 @@ body {
 
 img, svg { max-width: 100%; }
 p { margin: 0 0 1em; }
-a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: .2em; }
-a:hover { text-decoration-thickness: 3px; }
+a { color: inherit; text-decoration-thickness: var(--line-fine); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: var(--line-heavy); }
 
-:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+:focus-visible { outline: var(--line-heavy) solid var(--ink); outline-offset: 3px; }
 .plate--ink :focus-visible, .colophon :focus-visible { outline-color: var(--gold); }
 .plate--emerald :focus-visible, .plate--crimson :focus-visible { outline-color: var(--board); }
 
@@ -135,7 +155,7 @@ svg .fig { font-family: var(--f-title); font-weight: 400; letter-spacing: .02em;
   display: block; padding-block: 12px;
   font: 400 var(--t-hand-s)/1 var(--f-hand); letter-spacing: .09em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
 }
-.bar__nav a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.bar__nav a:hover { text-decoration: underline; text-decoration-thickness: var(--line-mid); text-underline-offset: 6px; }
 .bar__cta { min-height: 44px; padding: 0 18px; font-size: var(--t-hand-s); }
 
 /* the Treatment menu: a chart key, one swatch to a treatment */
@@ -143,7 +163,7 @@ svg .fig { font-family: var(--f-title); font-weight: 400; letter-spacing: .02em;
 .treatments summary {
   list-style: none; display: inline-flex; align-items: center; gap: 9px;
   min-height: 44px; padding: 0 14px;
-  border: 2px solid var(--ink); background: var(--board); cursor: pointer;
+  border: var(--line-mid) solid var(--ink); background: var(--board); cursor: pointer;
   font: 400 var(--t-hand-s)/1 var(--f-hand); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
   transition: background-color .16s var(--ease-out);
 }
@@ -163,7 +183,7 @@ svg .fig { font-family: var(--f-title); font-weight: 400; letter-spacing: .02em;
   display: grid; grid-template-columns: 18px minmax(0, 1fr); column-gap: 12px; row-gap: 2px;
   min-height: 44px; padding: 10px 12px; text-decoration: none;
 }
-.treatments__menu a::before { content: ""; grid-row: 1 / span 2; width: 16px; height: 16px; margin-top: 3px; border: 2px solid var(--ink); }
+.treatments__menu a::before { content: ""; grid-row: 1 / span 2; width: 16px; height: 16px; margin-top: 3px; border: var(--line-mid) solid var(--ink); }
 .treatments__menu a[aria-current="page"]::before { background: var(--crimson); }
 .treatments__menu strong { font: 900 var(--t-hand)/1.1 var(--f-title); letter-spacing: .03em; text-transform: uppercase; }
 .treatments__menu span { grid-column: 2; font-size: var(--t-small); line-height: 1.3; color: var(--ink-soft); }
@@ -193,8 +213,8 @@ svg .fig { font-family: var(--f-title); font-weight: 400; letter-spacing: .02em;
 
 /* a legend: a term in the drafting hand, its value in prose, a ruled line under each */
 .legend { margin: 0; }
-.legend div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: 1.5px solid currentColor; }
-.legend div:first-child { border-top: 1.5px solid currentColor; }
+.legend div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: var(--line-fine) solid currentColor; }
+.legend div:first-child { border-top: var(--line-fine) solid currentColor; }
 .legend dt { flex: none; font: 400 var(--t-hand-s)/1.2 var(--f-hand); letter-spacing: .09em; text-transform: uppercase; }
 .legend dd { margin: 0; text-align: right; line-height: 1.3; }
 .legend--tight dd { font-size: var(--t-small); }
@@ -243,7 +263,7 @@ h1 {
 .record__text .lede { color: var(--gold); }
 .record .legend { margin-top: 26px; }
 
-.pencil { margin-top: 28px; padding: 22px 24px 24px; border: 2px solid var(--gold); }
+.pencil { margin-top: 28px; padding: 22px 24px 24px; border: var(--line-mid) solid var(--gold); }
 .pencil h3 { margin: 0 0 6px; font: 900 var(--t-lede)/1 var(--f-title); font-size: var(--t-lede); letter-spacing: .02em; text-transform: uppercase; color: var(--gold); }
 .pencil__hint { margin: 0 0 16px; font-size: var(--t-small); line-height: 1.4; }
 .pencil__entry { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px 18px; }
@@ -251,13 +271,14 @@ h1 {
 .pencil__field label { font: 400 var(--t-hand-s)/1.2 var(--f-hand); letter-spacing: .09em; text-transform: uppercase; }
 .pencil__field input {
   width: 100%; height: 56px; padding: 0 2px;
-  border: 0; border-bottom: 2px dotted var(--board); border-radius: 0;
+  border: 0; border-bottom: var(--line-mid) dotted var(--board); border-radius: 0;
   background: transparent; color: var(--board);
   font: 400 var(--t-name)/1 var(--f-text); font-variant-numeric: lining-nums tabular-nums; caret-color: var(--gold);
 }
-.pencil__field input::placeholder { color: var(--board); opacity: .62; font-size: var(--t-lede); font-style: italic; }
-.pencil__field input:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
-.pencil__field input[aria-invalid="true"] { border-bottom: 2px solid var(--gold); }
+/* opacity: 1 cancels the dimming some browsers add to placeholders, so the declared colour is what shows */
+.pencil__field input::placeholder { color: var(--board-soft); opacity: 1; font-size: var(--t-lede); font-style: italic; }
+.pencil__field input:focus-visible { outline: var(--line-heavy) solid var(--gold); outline-offset: 4px; }
+.pencil__field input[aria-invalid="true"] { border-bottom: var(--line-mid) solid var(--gold); }
 .pencil__out { min-height: 1.4em; margin: 14px 0 0; font-size: var(--t-small); line-height: 1.4; }
 .pencil__out[data-state="error"] { color: var(--gold); }
 .pencil__tools { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 14px; }
@@ -271,7 +292,7 @@ h1 {
 .forecast__sheet { display: grid; grid-template-columns: 440fr 540fr; align-items: center; column-gap: 20px; }
 .forecast__coil, .forecast__rows { display: block; width: 100%; height: auto; }
 .fc-row { stroke-linecap: butt; }
-.forecast figcaption { margin-top: 22px; padding-top: 14px; border-top: 1.5px solid var(--board); font-size: var(--t-small); line-height: 1.45; }
+.forecast figcaption { margin-top: 22px; padding-top: 14px; border-top: var(--line-fine) solid var(--board); font-size: var(--t-small); line-height: 1.45; }
 #fc-read { color: var(--gold); }
 
 /* ---------- who drives? ---------- */
@@ -293,8 +314,8 @@ h1 {
 .fan__figure { margin: 0; }
 .fan__chart { display: block; width: 100%; height: auto; }
 .fan__list { margin: 26px 0; padding: 0; list-style: none; }
-.fan__list li { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: 1.5px solid var(--board); }
-.fan__list li:first-child { border-top: 1.5px solid var(--board); }
+.fan__list li { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: var(--line-fine) solid var(--board); }
+.fan__list li:first-child { border-top: var(--line-fine) solid var(--board); }
 .fan__list strong { font: 900 var(--t-name)/1 var(--f-title); letter-spacing: .015em; text-transform: uppercase; }
 .fan__list span { text-align: right; }
 .fan__text .hand { margin: 0; }
@@ -317,9 +338,9 @@ h1 {
 .invite__state[hidden] { display: none; }
 .invite .lede { max-width: 34rem; margin: 0 auto; }
 .invite__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 26px; margin-top: 28px; }
-.tag { display: inline-block; padding: 12px 16px 10px; border: 2px solid var(--board); font: 400 var(--t-hand)/1 var(--f-hand); letter-spacing: .09em; text-transform: uppercase; }
+.tag { display: inline-block; padding: 12px 16px 10px; border: var(--line-mid) solid var(--board); font: 400 var(--t-hand)/1 var(--f-hand); letter-spacing: .09em; text-transform: uppercase; }
 .invite__date { padding-block: 12px; font: 400 var(--t-hand)/1 var(--f-hand); letter-spacing: .09em; text-transform: uppercase; }
-.invite__line { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 22px; margin: clamp(40px, 5vw, 72px) 0 0; padding-top: 16px; border-top: 1.5px solid var(--board); }
+.invite__line { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 22px; margin: clamp(40px, 5vw, 72px) 0 0; padding-top: 16px; border-top: var(--line-fine) solid var(--board); }
 
 /* ---------- colophon ---------- */
 
@@ -383,9 +404,9 @@ h1 {
   :root { --menu-h: 52px; }
   /* two rows: the Treatment menu on top, which scrolls away; the name and the action stay */
   .bar { top: calc(-1 * var(--menu-h)); grid-template-columns: minmax(0, 1fr) auto; row-gap: 0; padding-inline: 0; }
-  .treatments { grid-column: 1 / -1; grid-row: 1; border-bottom: 2px solid var(--ink); }
+  .treatments { grid-column: 1 / -1; grid-row: 1; border-bottom: var(--line-mid) solid var(--ink); }
   .treatments summary { display: flex; width: 100%; min-height: var(--menu-h); padding: 0 var(--gutter); border: 0; }
-  .treatments__chev { box-sizing: content-box; margin-left: auto; padding: 9px 7px; border: 2px solid var(--ink); background: var(--gold); }
+  .treatments__chev { box-sizing: content-box; margin-left: auto; padding: 9px 7px; border: var(--line-mid) solid var(--ink); background: var(--gold); }
   .treatments summary:hover, .treatments[open] summary { background: var(--board); }
   .treatments__menu { left: 0; right: 0; top: 100%; width: auto; max-width: none; border-width: var(--line) 0; }
   .bar__name { grid-row: 2; padding-left: var(--gutter); }

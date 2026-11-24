@@ -15,6 +15,9 @@ import math
 import sys
 from pathlib import Path
 
+# The inks. These mirror --ink, --board, --crimson, --gold and --emerald in
+# docs/lap-chart/lap-chart.css (and the same constants in tools/lap-chart-drivers.py).
+# The drawings carry them as literals; change all three places together.
 INK = "#171512"
 BOARD = "#EFE3C8"
 CRIMSON = "#B8232A"
