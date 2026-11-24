@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T21:00:00Z",
+  "generatedAt": "2026-11-24T04:00:00Z",
   "title": "Design System: Goodput Festival of Code",
   "extensions": {
     "colorMeta": {
@@ -222,20 +222,24 @@
         "value": "max-width: 699px"
       },
       {
-        "name": "stacked",
-        "value": "max-width: 1099px"
+        "name": "no-treatment-label",
+        "value": "max-width: 859px"
       },
       {
-        "name": "no-contents",
-        "value": "max-width: 1159px"
+        "name": "stacked",
+        "value": "max-width: 1099px"
       },
       {
         "name": "cover-tight",
         "value": "1100px to 1239px"
       },
       {
+        "name": "no-contents",
+        "value": "max-width: 1279px"
+      },
+      {
         "name": "short-name",
-        "value": "1160px to 1359px"
+        "value": "max-width: 1499px"
       }
     ],
     "rules": [
@@ -291,7 +295,241 @@
         "value": "240px feTurbulence tile, baseFrequency .85, 2 octaves",
         "purpose": "Paper tooth: dark flecks on buff and yellow, light flecks on green."
       }
-    ]
+    ],
+    "shared": {
+      "files": [
+        "docs/assets/js/config.js",
+        "docs/assets/js/treatments.js",
+        "docs/assets/goodput-festival-of-code.ics",
+        "docs/favicon.svg",
+        "tools/drivers.py"
+      ],
+      "setting": "window.GOODPUT.inviteUrl",
+      "storageKey": "goodput.forecast",
+      "forecastRange": "1 to 9,999,999, whole numbers",
+      "menuContract": "details.treatments[data-treatments] > summary (.treatments__label, .treatments__current, .treatments__chev) + ul.treatments__menu > li > a[aria-current] (strong, span)",
+      "stillClass": "html.still (from ?still)",
+      "rules": [
+        {
+          "name": "The Separate Worlds Rule",
+          "body": "A treatment owns its folder, its stylesheet, its script, its fonts folder and its portraits. No typeface, colour token or component style crosses from one treatment to another; a face used by one is not available to the other two."
+        },
+        {
+          "name": "The Behaviour Only Rule",
+          "body": "Files under `docs/assets/js/` that all three load carry behaviour and settings only. They set no styles, inject no markup and name no colours, so each treatment draws the shared menu and states in its own vocabulary."
+        },
+        {
+          "name": "The Same Facts Rule",
+          "body": "All three say the same things: the same dates, venue, four drivers and racing numbers, three customers, the record left unposted, the same closed and open states. A fact changed on one is changed on all three."
+        }
+      ]
+    },
+    "treatments": {
+      "programme": {
+        "name": "The Official Programme",
+        "files": [
+          "docs/index.html",
+          "docs/assets/css/programme.css",
+          "docs/assets/js/main.js",
+          "docs/assets/fonts/",
+          "docs/assets/img/",
+          "tools/drivers.py"
+        ],
+        "tokens": "DESIGN.md frontmatter"
+      },
+      "tower": {
+        "name": "The Timekeepers' Tower",
+        "reviewStatus": "finish review passed (ship) after one fix round",
+        "files": [
+          "docs/tower/index.html",
+          "docs/tower/tower.css",
+          "docs/tower/tower.js",
+          "docs/tower/fonts/",
+          "docs/tower/img/",
+          "tools/tower-drivers.py"
+        ],
+        "colors": {
+          "green": "#114232",
+          "green-deep": "#0A2B20",
+          "black": "#151412",
+          "post": "#2A2823",
+          "yellow": "#F4C20D",
+          "cream": "#F3E9CF",
+          "red": "#C4271B",
+          "cream-soft": "#C3D2BA",
+          "cream-dim": "#CFC6AE",
+          "ink-soft": "#45423A",
+          "rule": "#9DB3B0"
+        },
+        "fonts": {
+          "sign": "Bungee, Arial Black, sans-serif",
+          "inline": "Bungee Inline, Bungee, sans-serif",
+          "num": "Big Shoulders Display, Arial Narrow, sans-serif",
+          "type": "Special Elite, Courier New, monospace",
+          "hand": "Kalam, Segoe Print, cursive"
+        },
+        "typeRamp": {
+          "label": ".8125rem",
+          "small": ".9375rem",
+          "note": "1rem",
+          "body": "1.125rem",
+          "lede": "1.375rem",
+          "sign-s": "1.75rem",
+          "board-title": "max(1.75rem, calc(var(--m) * 6))",
+          "entrant": "max(1.375rem, calc(var(--m) * 3.4))",
+          "sheet-title": "clamp(1.75rem, 3.4vw, 3rem)",
+          "name": "calc(var(--m) * 14.6)"
+        },
+        "spacing": {
+          "module": "clamp(5.8px, min(0.8333vw, calc((100vh - 64px) / 62)), 16px)",
+          "tower-width": "120 modules",
+          "phone-module": "calc(100vw / 62)",
+          "fascia-h": "64px (56px under 700px)",
+          "ledger-line": "32px",
+          "paper-max": "1240px"
+        },
+        "motion": [
+          {
+            "name": "ease",
+            "value": "cubic-bezier(.2, .9, .3, 1)"
+          },
+          {
+            "name": "hang",
+            "value": ".62s date tiles, delays .1s to .78s; .5s forecast tiles, 90ms stagger"
+          },
+          {
+            "name": "state",
+            "value": ".15s colour, .22s arrow, .1s press"
+          }
+        ],
+        "breakpoints": [
+          "max-width: 1239px",
+          "max-width: 999px",
+          "max-width: 859px",
+          "max-width: 699px",
+          "max-width: 379px"
+        ],
+        "signature": "Hang your forecast: the figure is hung tile by tile on the visitor's row of seven hooks.",
+        "rules": [
+          {
+            "name": "The Painted or Paper Rule",
+            "body": "What is painted on a board is set in the signwriter's faces. What is typed or pencilled is always on paper: the ledger sheet or a slip pinned to a board. The typewriter and the pencil never appear directly on paint."
+          },
+          {
+            "name": "The One Module Rule",
+            "body": "Boards, tiles, gaps and lettering painted at board scale are sized in modules, so the tower keeps its proportions at every width."
+          },
+          {
+            "name": "The Bare Hooks Rule",
+            "body": "A value that does not exist yet is shown as empty hooks and the words \"to be posted\". No figure, dash or zero stands in for it."
+          },
+          {
+            "name": "The Red on Cream Rule",
+            "body": "Red appears on cream, or as the whole warning board. It is never laid on yellow or green."
+          }
+        ],
+        "donts": [
+          "Don't set small tiles in a grid of metrics; tiles are few and large.",
+          "Don't fade, slide or loop anything; a tile drops onto its hooks once.",
+          "Don't put typed or pencilled text straight onto a board.",
+          "Don't use gradients, shadows or gloss highlights; the paint is flat and tone is one hatch.",
+          "Don't borrow the Programme's or the Lap Chart's faces, inks or furniture."
+        ]
+      },
+      "lap-chart": {
+        "name": "The Hand-Inked Lap Chart",
+        "files": [
+          "docs/lap-chart/index.html (generated)",
+          "tools/lap-chart/build.py",
+          "tools/lap-chart/template.html",
+          "docs/lap-chart/lap-chart.css",
+          "docs/lap-chart/lap-chart.js",
+          "docs/lap-chart/fonts/",
+          "docs/lap-chart/img/",
+          "tools/lap-chart-drivers.py"
+        ],
+        "colors": {
+          "board": "#EFE3C8",
+          "ink": "#171512",
+          "crimson": "#B8232A",
+          "gold": "#E3A81C",
+          "emerald": "#1E6B4A",
+          "ink-soft": "#4A4337"
+        },
+        "fonts": {
+          "title": "Londrina Solid, Arial Narrow, sans-serif",
+          "hand": "Dekko, Comic Sans MS, cursive",
+          "text": "Averia Serif Libre, Georgia, serif"
+        },
+        "typeRamp": {
+          "hand-s": ".875rem",
+          "small": "1rem",
+          "hand": "1.125rem",
+          "body": "1.1875rem",
+          "lede": "1.5rem",
+          "name": "2rem",
+          "question": "clamp(2.5rem, 5.2vw, 4.5rem)",
+          "title": "clamp(3.5rem, 6.9vw, 6.5rem)"
+        },
+        "spacing": {
+          "gutter": "clamp(20px, 4.4vw, 64px)",
+          "pad-y": "clamp(64px, 8vw, 116px)",
+          "bar-h": "62px",
+          "line": "2.5px",
+          "sheet": "1240px"
+        },
+        "motion": [
+          {
+            "name": "ease-out",
+            "value": "cubic-bezier(.16, 1, .3, 1)"
+          },
+          {
+            "name": "ink",
+            "value": "3.4s linear after .35s, one stroke along a mask"
+          },
+          {
+            "name": "forecast",
+            "value": "700ms to 2000ms by length, ease-in-out quadratic"
+          },
+          {
+            "name": "state",
+            "value": ".16s colour, .25s arrow, .12s press"
+          }
+        ],
+        "breakpoints": [
+          "max-width: 1179px",
+          "max-width: 1059px",
+          "max-width: 959px",
+          "max-width: 699px"
+        ],
+        "signature": "Pencil in a forecast: inked as a gold coil, then unrolled onto twelve ruled rows of exactly the same length, 1,000 tokens per second to the row.",
+        "rules": [
+          {
+            "name": "The One Question, One Chart Rule",
+            "body": "Each plate asks one question and answers it with one drawing whose form belongs to that question. No chart form is reused as a template."
+          },
+          {
+            "name": "The Counted or Blank Rule",
+            "body": "A length drawn to scale was counted. Anything not yet known is drawn blank, or to no scale and labelled so. No figure appears that was not counted or entered by the visitor."
+          },
+          {
+            "name": "The Drawn Waver Rule",
+            "body": "The hand is in the geometry, produced by the build script. No blur, displacement or roughening filter is applied, and measured drawings are ruled true."
+          },
+          {
+            "name": "The Generated Page Rule",
+            "body": "The page is built from the template and the build script. A change is made there and rebuilt, never in the generated file."
+          }
+        ],
+        "donts": [
+          "Don't draw axes-and-cards analytics, gauges or dashboards.",
+          "Don't rank the customers or size anything by a number nobody measured.",
+          "Don't use gradients, shadows or filters; inks are flat and saturated inside an ink keyline.",
+          "Don't set the drafting hand in lower case, or prose in it.",
+          "Don't borrow the Programme's or the Tower's faces, inks or furniture."
+        ]
+      }
+    }
   },
   "components": [
     {
@@ -314,9 +552,9 @@
       "name": "Running Head",
       "kind": "nav",
       "refersTo": "masthead",
-      "description": "Sticky black strip: event name in yellow, contents links in buff, the yellow action block.",
-      "html": "<header class=\"ds-mast\"><a class=\"ds-mast-name\" href=\"#\">Goodput <span>Official Programme</span></a><nav><a href=\"#\">Record attempt</a><a href=\"#\">Drivers</a><a href=\"#\">Paddock</a></nav><a class=\"ds-mast-cta\" href=\"#\">Request an invitation</a></header>",
-      "css": ".ds-mast { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 56px; padding-inline: 24px; background: var(--ink, #1B1915); color: var(--stock, #E8D6AA); font-family: var(--f-caps, 'Hammersmith One', 'Gill Sans', sans-serif); font-weight: 400; text-transform: uppercase; font-size: .8125rem; } .ds-mast a { text-decoration: none; white-space: nowrap; } .ds-mast-name { color: var(--yellow, #F6C02A); letter-spacing: .16em; } .ds-mast-name span { color: var(--stock, #E8D6AA); } .ds-mast-name span::before { content: '\\00B7'; margin: 0 .7em; color: var(--stock-soft, #CFC09A); } .ds-mast nav { display: flex; gap: 28px; } .ds-mast nav a { color: var(--stock, #E8D6AA); letter-spacing: .14em; padding-block: 12px; } .ds-mast nav a:hover { color: var(--yellow, #F6C02A); text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; } .ds-mast-cta { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; background: var(--yellow, #F6C02A); color: var(--ink, #1B1915); letter-spacing: .13em; transition: background-color .18s cubic-bezier(.16,1,.3,1); } .ds-mast-cta:hover { background: var(--stock, #E8D6AA); } .ds-mast a:focus-visible { outline: 3px solid var(--yellow, #F6C02A); outline-offset: 3px; }"
+      "description": "Sticky black strip: event name in yellow, the Treatment menu box, contents links in buff, the yellow action block.",
+      "html": "<header class=\"ds-mast\"><a class=\"ds-mast-name\" href=\"#\">Goodput</a><details class=\"ds-treat\"><summary><span class=\"ds-treat-label\">Treatment</span><span>Official Programme</span><svg viewBox=\"0 0 12 8\" aria-hidden=\"true\"><path d=\"M1 1.5l5 5 5-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg></summary><ul><li><a href=\"#\" aria-current=\"page\"><strong>The Official Programme</strong><span>A letterpress race-day programme</span></a></li><li><a href=\"#\"><strong>The Timekeepers' Tower</strong><span>Painted scoreboards and number tiles</span></a></li><li><a href=\"#\"><strong>The Hand-Inked Lap Chart</strong><span>The meeting drawn as charts</span></a></li></ul></details><nav><a href=\"#\">Record attempt</a><a href=\"#\">Drivers</a></nav><a class=\"ds-mast-cta\" href=\"#\">Request an invitation</a></header>",
+      "css": ".ds-mast { display: flex; align-items: center; gap: 22px; height: 56px; padding-inline: 24px; background: var(--ink, #1B1915); color: var(--stock, #E8D6AA); font-family: var(--f-caps, 'Hammersmith One', 'Gill Sans', sans-serif); font-weight: 400; text-transform: uppercase; font-size: var(--t-label, .8125rem); } .ds-mast a { text-decoration: none; white-space: nowrap; } .ds-mast-name { color: var(--yellow, #F6C02A); letter-spacing: .16em; } .ds-mast-name:hover { color: var(--stock, #E8D6AA); } .ds-treat { position: relative; } .ds-treat summary { display: inline-flex; align-items: center; gap: 9px; min-height: 40px; padding: 0 12px; border: 1.5px solid var(--yellow, #F6C02A); cursor: pointer; list-style: none; letter-spacing: .13em; white-space: nowrap; transition: background-color .18s cubic-bezier(.16,1,.3,1), color .18s cubic-bezier(.16,1,.3,1); } .ds-treat summary::-webkit-details-marker { display: none; } .ds-treat summary svg { width: 12px; height: 8px; transition: transform .2s cubic-bezier(.16,1,.3,1); } .ds-treat[open] summary svg { transform: rotate(180deg); } .ds-treat-label { color: var(--yellow, #F6C02A); } .ds-treat-label::after { content: ':'; } .ds-treat summary:hover, .ds-treat[open] summary { background: var(--yellow, #F6C02A); color: var(--ink, #1B1915); } .ds-treat summary:hover .ds-treat-label, .ds-treat[open] .ds-treat-label { color: var(--ink, #1B1915); } .ds-treat ul { position: absolute; left: 0; top: calc(100% + 8px); z-index: 2; width: max-content; margin: 0; padding: 2px 16px 4px; list-style: none; background: var(--stock, #E8D6AA); color: var(--ink, #1B1915); border: 2px solid var(--ink, #1B1915); border-top-width: 6px; } .ds-treat li + li { border-top: 1.5px solid var(--ink, #1B1915); } .ds-treat li a { display: grid; grid-template-columns: 12px minmax(0, 1fr); column-gap: 12px; padding: 12px 0; color: var(--ink, #1B1915); } .ds-treat li a::before { content: ''; grid-row: 1 / span 2; width: 12px; height: 12px; margin-top: 4px; border: 1.5px solid var(--ink, #1B1915); border-radius: 50%; } .ds-treat li a[aria-current='page']::before { background: var(--red, #B22812); } .ds-treat li strong { grid-column: 2; font-weight: 400; letter-spacing: .13em; font-size: var(--t-label-l, 1rem); line-height: 1.3; } .ds-treat li span { grid-column: 2; font-family: var(--f-text, 'Old Standard TT', Georgia, serif); font-style: italic; text-transform: none; letter-spacing: 0; font-size: var(--t-caption, 1rem); color: var(--ink-soft, #3F3B31); } .ds-treat li a:hover strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; } .ds-mast nav { display: flex; gap: 28px; margin-left: auto; } .ds-mast nav a { color: var(--stock, #E8D6AA); letter-spacing: .14em; padding-block: 12px; } .ds-mast nav a:hover { color: var(--yellow, #F6C02A); text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; } .ds-mast-cta { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; background: var(--yellow, #F6C02A); color: var(--ink, #1B1915); letter-spacing: .13em; transition: background-color .18s cubic-bezier(.16,1,.3,1); } .ds-mast-cta:hover { background: var(--stock, #E8D6AA); } .ds-mast :focus-visible { outline: 3px solid var(--yellow, #F6C02A); outline-offset: 3px; } .ds-treat ul :focus-visible { outline-color: var(--ink, #1B1915); }"
     },
     {
       "name": "Race Card",
@@ -331,7 +569,7 @@
       "kind": "input",
       "refersTo": "forecast-input",
       "description": "A pencilled-in field on the green plate: no box, a dotted baseline, italic figures, inside a yellow frame.",
-      "html": "<div class=\"ds-forecast\"><label for=\"ds-forecast-in\">Tokens per second</label><input class=\"ds-forecast-input\" id=\"ds-forecast-in\" type=\"text\" inputmode=\"numeric\" placeholder=\"say, 4,200\"></div>",
+      "html": "<div class=\"ds-forecast\"><label for=\"ds-forecast-in\">Tokens per second</label><input class=\"ds-forecast-input\" id=\"ds-forecast-in\" type=\"text\" inputmode=\"numeric\" placeholder=\"a whole number\"></div>",
       "css": ".ds-forecast { display: flex; flex-direction: column; gap: 6px; padding: 22px 24px 24px; background: var(--green, #0F3D2C); border: 2px solid var(--yellow, #F6C02A); color: var(--stock, #E8D6AA); } .ds-forecast label { font-family: var(--f-caps, 'Hammersmith One', 'Gill Sans', sans-serif); font-weight: 400; text-transform: uppercase; letter-spacing: .15em; font-size: var(--t-label, .8125rem); } .ds-forecast-input { width: 100%; height: 56px; padding: 0 2px; border: 0; border-bottom: 2px dotted var(--stock, #E8D6AA); border-radius: 0; background: transparent; color: var(--stock, #E8D6AA); font: italic 400 2rem/1 var(--f-text, 'Old Standard TT', Georgia, serif); font-variant-numeric: lining-nums tabular-nums; caret-color: var(--yellow, #F6C02A); } .ds-forecast-input::placeholder { color: var(--stock-soft, #CFC09A); opacity: 1; font-size: 1.25rem; } .ds-forecast-input:focus-visible { outline: 3px solid var(--yellow, #F6C02A); outline-offset: 4px; } .ds-forecast-input[aria-invalid='true'] { border-bottom: 2px solid var(--yellow, #F6C02A); }"
     },
     {
@@ -369,7 +607,7 @@
   ],
   "narrative": {
     "northStar": "The Official Programme",
-    "overview": "**Creative North Star: \"The Official Programme\"**\n\nThe site is the souvenir programme of a 1930s-50s race meeting, read page by page. Each section is a printed page in one stock or one ink: a chrome-yellow cover, buff text pages, a racing-green plate, a salmon insert, a yellow tear-off coupon, a black colophon. Nothing is a card floating on a background; the page itself is the object, edge to edge, and it changes colour when you turn it.\n\nEverything on it is made the way a jobbing printer would have made it. Four inks, flat. Tone comes from dot screens and hatching, never from blends. The passes sit slightly out of register and the vermilion overprints what lies beneath it. Five typefaces each have one job and are never swapped. The furniture is the furniture of a programme: dot-leader entry tables, Oxford rules, number roundels, rubber stamps, a price seal, a perforation line with scissors. Every piece of that furniture carries a real fact about the event.\n\nThe density is that of print: very large bill lines set to fill their measure, then quiet book-weight text in narrow columns beside them. Motion belongs to the press and the instrument: plates slide into register once, a chronometric needle steps rather than sweeps, wheels turn and then settle into print.",
+    "overview": "The site is the souvenir programme of a 1930s-50s race meeting, read page by page. Each section is a printed page in one stock or one ink: a chrome-yellow cover, buff text pages, a racing-green plate, a salmon insert, a yellow tear-off coupon, a black colophon. Nothing is a card floating on a background; the page itself is the object, edge to edge, and it changes colour when you turn it.\n\nEverything on it is made the way a jobbing printer would have made it. Four inks, flat. Tone comes from dot screens and hatching, never from blends. The passes sit slightly out of register and the vermilion overprints what lies beneath it. Five typefaces each have one job and are never swapped. The furniture is the furniture of a programme: dot-leader entry tables, Oxford rules, number roundels, rubber stamps, a price seal, a perforation line with scissors. Every piece of that furniture carries a real fact about the event.\n\nThe density is that of print: very large bill lines set to fill their measure, then quiet book-weight text in narrow columns beside them. Motion belongs to the press and the instrument: plates slide into register once, a chronometric needle steps rather than sweeps, wheels turn and then settle into print.",
     "keyCharacteristics": [
       "Four inks (chrome yellow, racing green, vermilion, ink black) on buff stock, plus one salmon insert stock. No other colour exists.",
       "Flat shapes only: no gradients, no shadows, no blur. Depth is overprint, knockout and misregistration.",
@@ -446,7 +684,7 @@
     "donts": [
       "Don't use gradients, box shadows, text shadows, glows or blur. The build has none.",
       "Don't introduce a colour outside the four inks and two stocks, or tint one with transparency to make a panel.",
-      "Don't round the corners of buttons, inputs, frames or images. Circles belong to roundels, seals, dials and wheels.",
+      "Don't round the corners of buttons, inputs, frames or images. Circles belong to roundels, seals, dials, wheels and the menu's marker ring.",
       "Don't set a fifth weight or a sixth face; four of the five faces have one weight, and emphasis is a change of voice.",
       "Don't let the script or a stamp cover the letters of a headline; it crosses the baseline and carries a ground-colour stroke.",
       "Don't place yellow, green or salmon as a card inside a buff page; an ink takes the whole page or stays inside a plate.",
