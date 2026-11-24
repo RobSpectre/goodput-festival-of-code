@@ -418,17 +418,19 @@ The three treatments are three complete pages for one event. They share facts an
 
 ## Treatment: The Timekeepers' Tower
 
-Files: `docs/tower/index.html`, `docs/tower/tower.css`, `docs/tower/tower.js`, fonts in `docs/tower/fonts/`, portraits in `docs/tower/img/` drawn by `tools/tower-drivers.py`.
+Files: `docs/tower/index.html`, `docs/tower/tower.css`, `docs/tower/tower.js`, fonts in `docs/tower/fonts/`, portraits in `docs/tower/img/` drawn by `tools/tower-drivers.py`. Finish review complete: ship, after one fix round.
 
 A trackside scoreboard tower. Racing-green gloss boards are bolted to a black timber frame whose two posts show at the sides; plank seams and bolt heads are drawn on every board. Facts are hung, not typeset: cream enamel tiles with black numerals on hooks that show through two holes, a little out of true. A chrome-yellow pit board carries the action. Anything typed or pencilled is on paper pinned to the tower. A place with nothing to post is shown as bare hooks.
 
 ### Tower palette
-- **Board Green** (#114232): the boards. **Deep Green** (#0A2B20): recesses for unposted tiles, plank seams, the ground behind the ledger sheet.
-- **Frame Black** (#151412): the page ground, the fascia, tile numerals, keylines, the black board for the customers. **Post** (#2A2823): the timber posts where they show.
+- **Board Green** (#114232): the boards. **Deep Green** (#0A2B20): recesses for unposted tiles, bolt holes, the shadow side of a plank seam, the ground behind the ledger sheet. **Lit Green** (#1C5A45): the lit edge of a plank seam.
+- **Frame Black** (#151412): the page ground, the fascia, tile numerals, keylines, the black board for the customers. **Post** (#2A2823): the timber posts where they show, and the lit edge of a seam on the black board. **Pitch** (#000000): the darkest line only: the posts' edges, seams and bolt holes on the black board.
 - **Pit Yellow** (#F4C20D): the pit boards, column heads on green, the fascia's rule, the visitor's own number tile, board titles on black.
 - **Enamel Cream** (#F3E9CF): tiles, paper, painted lettering on green and black, the finger board.
 - **Signal Red** (#C4271B): on cream only (the defined word, the finger board's title, drawing pins, the ledger's margin line, the current-treatment marker, the button's hover on paper), or as the whole warning board with cream lettering.
-- **Thinned Cream** (#C3D2BA) and **Dim Cream** (#CFC6AE): second-rank painted lettering and row rules on green and on black respectively. **Soft Ink** (#45423A): second-rank type on paper. **Ledger Rule** (#9DB3B0): the ruling of the sheet.
+- **Thinned Cream** (#C3D2BA) and **Dim Cream** (#CFC6AE): second-rank painted lettering and row rules on green and on black respectively. **Soft Ink** (#45423A): second-rank type on paper. **Ledger Rule** (#9DB3B0): the ruling of the sheet. **Dim Line** (#4A4740): row rules on the black board.
+
+Fourteen colours, all declared as custom properties. The drawn details (seams, bolts, ruling) are data URIs that repeat the tokens they mirror, each named in a comment beside it.
 
 ### Tower type
 Five faces, split by material.
@@ -436,12 +438,14 @@ Five faces, split by material.
 - **Tall gothic** (Big Shoulders Display, variable, used at 700, 800 and 900): tile numerals, column heads, and painted sentences in upper and lower case. It is the page's default voice.
 - **Typewriter** (Special Elite): typed matter, on paper only. **Pencil** (Kalam 400 and 700): written entries, on paper only.
 
-Static ramp for anything set as text: label .8125rem (painted column heads, tracked .16em, uppercase), small .9375rem, note 1rem (slips, small print), body 1.125rem (the sheet), lede 1.375rem (painted sentences, pencilled entries), small signwriting 1.75rem.
+Static ramp, eight steps: label .8125rem (painted column heads and labels, tracked .16em, uppercase); small .9375rem (the smallest slip); note 1rem (slips, small print); body 1.125rem (the sheet, painted sentences); small lede 1.25rem (large painted sentences on phones); lede 1.375rem (large painted sentences, pencilled entries, the defined word); small signwriting 1.75rem; title 3rem (the sheet title at full width).
 
-Lettering painted at board scale is sized in modules with a rem floor: board title max(1.75rem, 6 modules); entrant max(1.375rem, 3.4 modules); customer names max(1.75rem, 5.2 modules); warning title max(1.75rem, 4 modules); the big pit board max(2.75rem, 11 modules); the name 14.6 modules with "Festival of Code" at 5.2; the month 6. The sheet's typed heading runs clamp(1.75rem, 3.4vw, 3rem).
+Lettering painted at board scale is sized in modules, and where it has a floor the floor is a ramp step: board title (6 modules), customer names (5.2), warning title (4) and the big pit board (11) never fall below small signwriting; an entrant (3.4 modules) never below lede; a machine (2.3) never below body; the venue lines (2) never below small. The name is 14.6 modules with "Festival of Code" at 5.2; the month 6. The sheet's typed heading runs from small signwriting to title at 3.4vw. A heading sized in modules also states a ramp step first, as a readable fallback for tools that cannot resolve the module; browsers use the module size.
 
 ### Tower layout
 One module sizes the tower: `--m` is clamp(5.8px, the lesser of .8333vw and (viewport height less 64px) / 62, 16px). 120 modules make the tower's width, so it fills a wide window and narrows, posts showing, when the window is short enough that the three hero boards would not fit one screen. Boards stack with one module between them and are padded 3 by 4 modules; bolts are 1.5 modules, planks 6 modules deep. Tiles are 10 by 14 modules (date), 13 by 8.5 (racing number) and 6 by 8.5 (figures), each tilted by under two degrees and hung with slightly uneven gaps.
+
+The finger board, warning board, big pit board, the pointing hand and the pit board's pole are padded and sized in modules like every other board. Two things are deliberately off the module: paper, which is ruled at 32px and padded fluidly, and the fascia, a fixed rail whose Treatment plate and small pit board are set in px. Line weights are px.
 
 The fascia is a sticky 64px black strip with a 3px yellow rule under it. The ledger sheet is capped at 1240px with every line of type on a 32px rule and a red margin line; the paddock is a twelve-column stage (finger board 7, glossary 5, warning board full width).
 
@@ -463,14 +467,16 @@ The fascia is a sticky 64px black strip with a 3px yellow rule under it. The led
 - **Focus:** a 3px cream ring on paint, a black ring on paper and on the yellow boards.
 
 ### Tower motion and illustration
-Tiles are hung, they do not fade: each drops from above, overshoots and settles with one small swing (.62s for the date tiles, staggered up to .78s; .5s for forecast tiles, 90ms apart) on cubic-bezier(.2, .9, .3, 1). State changes take .15s; the arrow .22s. Nothing loops and nothing is animated from script.
+Tiles are hung: each drops from above (showing itself over the first third of the fall), overshoots and settles with one small swing (.62s for the date tiles, staggered up to .78s; .5s for forecast tiles, 90ms apart) on cubic-bezier(.2, .9, .3, 1). State changes take .15s; the arrow .22s. Nothing loops and nothing is animated from script.
 
 Illustration is flat colour with one coarse ruled hatch (6-unit pitch at -52 degrees). The scorer on his ladder appears twice, hanging the last date tile and reaching up to the visitor's row. Portraits are cream enamel plates with two hanging holes, hung as wide as a number tile, with the bust drawn to the chest so the racing suit reads.
 
 ### Tower rules
 **The Painted or Paper Rule.** What is painted on a board is set in the signwriter's faces. What is typed or pencilled is always on paper: the ledger sheet or a slip pinned to a board. The typewriter and the pencil never appear directly on paint.
 
-**The One Module Rule.** Boards, tiles, gaps and lettering painted at board scale are sized in modules, so the tower keeps its proportions at every width.
+**The One Module Rule.** One module sizes every board and what is on it: its padding, tiles, recesses and hooks, the gaps between boards, the drawings, and lettering painted at board scale. Paper and the fascia are the two exceptions, and line weights are px.
+
+**The Tower Ramp Rule.** Every static type size is one of the eight ramp steps, and every floor or end of a fluid or module-scaled size is a ramp step. Every colour is one of the fourteen declared paints.
 
 **The Bare Hooks Rule.** A value that does not exist yet is shown as empty hooks and the words "to be posted". No figure, dash or zero stands in for it.
 
@@ -495,9 +501,10 @@ The meeting argued in hand-inked charts, after the data portraits W. E. B. Du Bo
 - **Crimson** (#B8232A): the unknown (the spiral and its question mark), the two inked days, the closing plate, the button's hover, the current-treatment swatch.
 - **Gold** (#E3A81C): the "What is goodput?" plate, the visitor's forecast line, emphasis and focus on the ink plate, hover fills.
 - **Emerald** (#1E6B4A): the customers' plate and one driver's square.
-- **Soft Ink** (#4A4337): ink thinned, for second-rank text on the board.
+- **Soft Ink** (#4A4337): ink thinned, for second-rank text on the board and on gold.
+- **Soft Board** (#9D9583): board thinned, a flat colour for placeholder text on the ink plate.
 
-Each ink owns whole plates and whole fields. Shapes carry an ink keyline with the colour laid flat inside.
+Seven colours, all laid flat: no gradients, no shadows, no opacity tints. Each ink owns whole plates and whole fields. Shapes carry an ink keyline with the colour laid flat inside. The charts and portraits carry the same inks as literals written by their generators.
 
 ### Lap Chart type
 Three hands.
@@ -505,12 +512,14 @@ Three hands.
 - **Drafting hand** (Dekko, always in capitals, tracked .05em to .09em): every caption, label, button and note on a drawing.
 - **Ink-soft serif** (Averia Serif Libre 400, italic, 700): prose.
 
-Static ramp: small capitals .875rem; small 1rem; drafting hand 1.125rem; body 1.1875rem; lede 1.5rem; names and numbers 2rem. Fluid roles: question clamp(2.5rem, 5.2vw, 4.5rem); title clamp(3.5rem, 6.9vw, 6.5rem). Lettering inside a chart is sized on the drawing in its own units (22 to 50), never from the stylesheet.
+Static ramp: small capitals .875rem; small 1rem; drafting hand 1.125rem; body 1.1875rem; lede 1.5rem; names and numbers 2rem. Three fluid roles, written out where used: date clamp(2rem, 3.1vw, 3rem); question clamp(2.5rem, 5.2vw, 4.5rem); title clamp(3.5rem, 6.9vw, 6.5rem). On phones the date and the title keep the same ends on a steeper slope. Lettering inside a chart is sized on the drawing in its own units (22 to 50), never from the stylesheet.
 
 ### Lap Chart layout
-Full-bleed plates separated by a 2.5px ink rule, padded clamp(64px, 8vw, 116px) by clamp(20px, 4.4vw, 64px), each holding a sheet capped at 1240px. A plate is a centred question (at most 16 characters to the line), then a two-column pairing of chart and text (5/7, 4/7 or 7/5), or a row of four squares. Board, ink, emerald and crimson plates carry a paper tooth; the tooth is dark on light grounds and light on dark ones.
+Four line weights carry every border, rule, underline and focus ring: heavy 3px (focus rings, the underline under the pointer); keyline 2.5px (plates, the head of the sheet, buttons, portrait squares); mid 2px (frames and fields inside a plate: the menu box, the forecast frame, the tag); fine 1.5px (ruled leaders, caption rules, link underlines).
 
-The first plate is one screen: the title across the top, then three columns with the chart in the middle sized to the viewport height (at least 430px, at most 800px), the date, place, offer and action at the left, and the blank lap-chart form with a reading note at the right. The header is a sticky 62px board-coloured bar with an ink rule beneath.
+Full-bleed plates separated by a keyline rule, padded clamp(64px, 8vw, 116px) by clamp(20px, 4.4vw, 64px), each holding a sheet capped at 1240px. A plate is a centred question (at most 16 characters to the line), then a two-column pairing of chart and text (5/7, 4/7 or 7/5), or a row of four squares. Board, ink, emerald and crimson plates carry a paper tooth; the tooth is dark on light grounds and light on dark ones.
+
+The first plate is one screen: the title across the top, then three columns with the chart in the middle sized to the viewport height (at least 430px, at most 800px), the date, place, offer and action at the left, and the blank lap-chart form with a reading note at the right. The header is a sticky 62px board-coloured bar with a keyline rule beneath.
 
 - **Under 1180px:** the long name leaves the header; the first plate becomes two columns with the chart spanning both rows at the right. **Under 1060px:** the chart links leave the header.
 - **Under 960px:** everything is one column, centred on the first plate; the driver squares go two to a row.
@@ -519,18 +528,18 @@ The first plate is one screen: the title across the top, then three columns with
 
 ### Lap Chart components
 - **Plate question:** fat capitals, centred, balanced.
-- **Legend:** a term in the drafting hand at the left, its value in prose at the right, a 1.5px rule under each row; on phones the value wraps beneath.
+- **Legend:** a term in the drafting hand at the left, its value in prose at the right, a fine rule under each row; on phones the value wraps beneath.
 - **Button:** an inked block, 56px tall, drafting-hand capitals, a drawn arrow. Ink on board (hover crimson); gold on the ink plate (hover board); board on the crimson plate (hover gold); a board-coloured outline for secondary actions on ink. Pressed, it drops 2px.
 - **The meeting in one line (first plate):** a single ribbon with mitred corners runs as four straight bars to one scale (4 drivers, 3 customers, 2 days, 1 machine), then turns crimson and coils into a spiral with a question mark at its centre: tokens per second, drawn to no scale and labelled so.
 - **Lap-chart form:** a ruled timekeeper's form with the four racing numbers entered and every lap blank.
 - **Idea bar:** throughput as one bar, split beneath into goodput and wheelspin, marked illustrative and not to scale.
-- **Forecast (signature interaction):** a field on the ink plate inside a 2px gold frame (dotted board-coloured baseline, tabular figures at 2rem, gold focus ring and gold error state). The figure is inked as a gold coil; "Unroll it" moves the same ink from the coil onto twelve ruled rows that run back and forth, a thousand tokens per second to the row, and "Coil it again" returns it. The ink on the coil plus the ink on the rows is always the same length. Past twelve thousand an arrow marks the line running off the sheet. A saved forecast is shown coiled. "Rub it out" clears it.
+- **Forecast (signature interaction):** a field on the ink plate inside a mid-weight gold frame (dotted board-coloured baseline, soft-board placeholder, tabular figures at 2rem, gold focus ring and gold error state). The figure is inked as a gold coil; "Unroll it" moves the same ink from the coil onto twelve ruled rows that run back and forth, a thousand tokens per second to the row, and "Coil it again" returns it. The ink on the coil plus the ink on the rows is always the same length. Past twelve thousand an arrow marks the line running off the sheet. A saved forecast is shown coiled. "Rub it out" clears it.
 - **Driver squares:** four flat squares (gold, emerald, crimson, and one left open for the driver entered under a nom de course), each with the racing number in the corner and a pen-and-ink portrait standing on its foot, a name and a two-row legend beneath.
 - **Fan:** three equal wedges for the three customers, drawn equal on purpose and captioned so.
 - **Calendar:** the thirty days of April 2027 as ruled squares with two inked crimson.
-- **Tag:** a 2px outlined label in the drafting hand for a status that is not an action.
-- **Treatment menu:** a chart key. A 2px ink box, gold on hover and when open; the list gives each treatment a square swatch, filled crimson for the current page.
-- **Focus:** a 3px ink ring on board and gold; gold on ink and the colophon; board on emerald and crimson.
+- **Tag:** a mid-weight outlined label in the drafting hand for a status that is not an action.
+- **Treatment menu:** a chart key. A mid-weight ink box, gold on hover and when open; the list gives each treatment a square swatch, filled crimson for the current page.
+- **Focus:** a heavy ink ring on board and gold; gold on ink and the colophon; board on emerald and crimson.
 
 ### Lap Chart motion and illustration
 Ink is drawn, never faded. On load the first plate's line is revealed in one continuous stroke along its middle (3.4s after a .35s pause), bars first, then the coil. The forecast inks and unrolls over 700ms to 2s depending on its length, easing in and out. State changes take .16s on cubic-bezier(.16, 1, .3, 1). Reduced motion and still mode show every drawing complete.
@@ -544,11 +553,13 @@ The charts are plain vector drawings set into the page by the build script; noth
 
 **The Drawn Waver Rule.** The hand is in the geometry, produced by the build script. No blur, displacement or roughening filter is applied, and measured drawings are ruled true.
 
+**The Lap Chart Tokens Rule.** Every colour in the stylesheet is one of the seven declared, every static size a ramp step, both ends of every fluid size a ramp value, and every line one of the four weights. Lettering and stroke widths inside a chart are sized on the drawing.
+
 **The Generated Page Rule.** The page is built from the template and the build script. A change is made there and rebuilt, never in the generated file.
 
 ### Lap Chart don'ts
 - Don't draw axes-and-cards analytics, gauges or dashboards.
 - Don't rank the customers or size anything by a number nobody measured.
-- Don't use gradients, shadows or filters; inks are flat and saturated inside an ink keyline.
+- Don't use gradients, shadows, filters or opacity tints; inks are flat and saturated inside an ink keyline.
 - Don't set the drafting hand in lower case, or prose in it.
 - Don't borrow the Programme's or the Tower's faces, inks or furniture.

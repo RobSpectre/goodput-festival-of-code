@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-24T04:00:00Z",
+  "generatedAt": "2026-11-24T06:00:00Z",
   "title": "Design System: Goodput Festival of Code",
   "extensions": {
     "colorMeta": {
@@ -339,7 +339,7 @@
       },
       "tower": {
         "name": "The Timekeepers' Tower",
-        "reviewStatus": "finish review passed (ship) after one fix round",
+        "reviewStatus": "finish review complete: ship, after one fix round",
         "files": [
           "docs/tower/index.html",
           "docs/tower/tower.css",
@@ -351,7 +351,9 @@
         "colors": {
           "green": "#114232",
           "green-deep": "#0A2B20",
+          "green-lit": "#1C5A45",
           "black": "#151412",
+          "pitch": "#000000",
           "post": "#2A2823",
           "yellow": "#F4C20D",
           "cream": "#F3E9CF",
@@ -359,7 +361,8 @@
           "cream-soft": "#C3D2BA",
           "cream-dim": "#CFC6AE",
           "ink-soft": "#45423A",
-          "rule": "#9DB3B0"
+          "rule": "#9DB3B0",
+          "line-dim": "#4A4740"
         },
         "fonts": {
           "sign": "Bungee, Arial Black, sans-serif",
@@ -373,11 +376,14 @@
           "small": ".9375rem",
           "note": "1rem",
           "body": "1.125rem",
+          "lede-s": "1.25rem",
           "lede": "1.375rem",
           "sign-s": "1.75rem",
-          "board-title": "max(1.75rem, calc(var(--m) * 6))",
-          "entrant": "max(1.375rem, calc(var(--m) * 3.4))",
-          "sheet-title": "clamp(1.75rem, 3.4vw, 3rem)",
+          "title": "3rem",
+          "board-title": "max(var(--t-sign-s), calc(var(--m) * 6))",
+          "entrant": "max(var(--t-lede), calc(var(--m) * 3.4))",
+          "machine": "max(var(--t-body), calc(var(--m) * 2.3))",
+          "sheet-title": "clamp(var(--t-sign-s), 3.4vw, var(--t-title))",
           "name": "calc(var(--m) * 14.6)"
         },
         "spacing": {
@@ -417,7 +423,11 @@
           },
           {
             "name": "The One Module Rule",
-            "body": "Boards, tiles, gaps and lettering painted at board scale are sized in modules, so the tower keeps its proportions at every width."
+            "body": "One module sizes every board and what is on it: its padding, tiles, recesses and hooks, the gaps between boards, the drawings, and lettering painted at board scale. Paper and the fascia are the two exceptions, and line weights are px."
+          },
+          {
+            "name": "The Tower Ramp Rule",
+            "body": "Every static type size is one of the eight ramp steps, and every floor or end of a fluid or module-scaled size is a ramp step. Every colour is one of the fourteen declared paints."
           },
           {
             "name": "The Bare Hooks Rule",
@@ -454,7 +464,14 @@
           "crimson": "#B8232A",
           "gold": "#E3A81C",
           "emerald": "#1E6B4A",
-          "ink-soft": "#4A4337"
+          "ink-soft": "#4A4337",
+          "board-soft": "#9D9583"
+        },
+        "lineWeights": {
+          "line-heavy": "3px",
+          "line": "2.5px",
+          "line-mid": "2px",
+          "line-fine": "1.5px"
         },
         "fonts": {
           "title": "Londrina Solid, Arial Narrow, sans-serif",
@@ -468,6 +485,7 @@
           "body": "1.1875rem",
           "lede": "1.5rem",
           "name": "2rem",
+          "date": "clamp(2rem, 3.1vw, 3rem)",
           "question": "clamp(2.5rem, 5.2vw, 4.5rem)",
           "title": "clamp(3.5rem, 6.9vw, 6.5rem)"
         },
@@ -475,7 +493,6 @@
           "gutter": "clamp(20px, 4.4vw, 64px)",
           "pad-y": "clamp(64px, 8vw, 116px)",
           "bar-h": "62px",
-          "line": "2.5px",
           "sheet": "1240px"
         },
         "motion": [
@@ -517,6 +534,10 @@
             "body": "The hand is in the geometry, produced by the build script. No blur, displacement or roughening filter is applied, and measured drawings are ruled true."
           },
           {
+            "name": "The Lap Chart Tokens Rule",
+            "body": "Every colour in the stylesheet is one of the seven declared, every static size a ramp step, both ends of every fluid size a ramp value, and every line one of the four weights. Lettering and stroke widths inside a chart are sized on the drawing."
+          },
+          {
             "name": "The Generated Page Rule",
             "body": "The page is built from the template and the build script. A change is made there and rebuilt, never in the generated file."
           }
@@ -524,7 +545,7 @@
         "donts": [
           "Don't draw axes-and-cards analytics, gauges or dashboards.",
           "Don't rank the customers or size anything by a number nobody measured.",
-          "Don't use gradients, shadows or filters; inks are flat and saturated inside an ink keyline.",
+          "Don't use gradients, shadows, filters or opacity tints; inks are flat and saturated inside an ink keyline.",
           "Don't set the drafting hand in lower case, or prose in it.",
           "Don't borrow the Programme's or the Tower's faces, inks or furniture."
         ]
