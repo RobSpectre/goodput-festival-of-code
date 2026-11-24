@@ -29,7 +29,7 @@ A software and AI-infrastructure event staged as a motor-racing festival. The na
 
 - The visitor arrives from a link, an invitation or word of mouth, usually on a laptop, often on a phone.
 - The page is a single landing page; there are no other routes yet.
-- The primary action is "Request an invitation". The destination URL does not exist yet: the button points at a placeholder the user will swap for the real form.
+- The primary action is "Request an invitation". The destination URL does not exist yet: it is one constant (`INVITE_URL` in `docs/assets/js/main.js`) that the user will set to the real form. Until then the page says entries open shortly and offers a save-the-date calendar file.
 
 ## Capabilities and Constraints
 

@@ -38,7 +38,7 @@ Every "Request an invitation" button reads one constant at the top of `docs/asse
 const INVITE_URL = '';
 ```
 
-While it is empty, the buttons lead to the entry form at the foot of the page, which says that entries open shortly and offers the calendar file. Paste the real form's URL there and every button goes straight to it.
+While it is empty, the cover and running-head buttons lead to the entry form at the foot of the page, which shows an "Entries open shortly" stamp and makes "Save the date" (a calendar file) its working button. Paste the real form's URL there and every "Request an invitation" button goes straight to it, and the entry form swaps its stamp for that button.
 
 ## What is illustrative
 

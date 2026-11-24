@@ -4,9 +4,10 @@
   'use strict';
 
   /* The one thing to change when the invitation form exists: paste its URL
-     here and every "Request an invitation" button will lead to it. While it
-     is empty, the buttons lead to the entry form at the foot of the page,
-     which says that entries open shortly. */
+     here. Every "Request an invitation" button will then lead to it, and the
+     entry form swaps its "Entries open shortly" stamp for the button. While
+     it is empty, the buttons lead to the entry form at the foot of the page,
+     which says that entries open shortly and offers the calendar file. */
   const INVITE_URL = '';
 
   /* ?still parks every animation at its end state, for captures and print. */
@@ -17,21 +18,13 @@
 
   /* ---------- invitation ---------- */
 
-  const closedNote = document.getElementById('entry-closed');
-  const inviteLinks = document.querySelectorAll('[data-invite]');
-
   if (INVITE_URL) {
-    inviteLinks.forEach((link) => { link.href = INVITE_URL; });
-    if (closedNote) closedNote.remove();
-  } else if (closedNote) {
-    closedNote.hidden = true;
-    const finalLink = document.querySelector('[data-invite="final"]');
-    if (finalLink) {
-      finalLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        closedNote.hidden = false;
-        closedNote.focus({ preventScroll: true });
-      });
+    document.querySelectorAll('[data-invite]').forEach((link) => { link.href = INVITE_URL; });
+    const closed = document.getElementById('entry-closed');
+    const open = document.getElementById('entry-open');
+    if (closed && open) {
+      closed.hidden = true;
+      open.hidden = false;
     }
   }
 

@@ -29,8 +29,8 @@
     <pattern id="p-straw" width="26" height="6" patternUnits="userSpaceOnUse"><path d="M0 2h17M9 5h17" stroke="#1B1915" stroke-width="1.1"/></pattern>
     <pattern id="p-water" width="34" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q8.500 -6 17 0 t17 0" fill="none" stroke="#0F3D2C" stroke-width="1.3"/></pattern>
     <pattern id="p-gdots" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="2.5" cy="2.5" r="1.3" fill="#0F3D2C"/></pattern>
-    <pattern id="p-check" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><rect width="18" height="18" fill="#E9DDBF"/><rect width="9" height="9" fill="#1B1915"/><rect x="9" y="9" width="9" height="9" fill="#1B1915"/></pattern>
-    <pattern id="p-bdots" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3" cy="3" r="1.3" fill="#E9DDBF"/></pattern>
+    <pattern id="p-check" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><rect width="18" height="18" fill="#E8D6AA"/><rect width="9" height="9" fill="#1B1915"/><rect x="9" y="9" width="9" height="9" fill="#1B1915"/></pattern>
+    <pattern id="p-bdots" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3" cy="3" r="1.3" fill="#E8D6AA"/></pattern>
     <g id="spoke"><path d="M0,-9 L5,-42 M0,-9 L-5,-42" stroke="#1B1915" stroke-width="1.4" fill="none"/></g>
     <g id="spokes">
       <use href="#spoke"/><use href="#spoke" transform="rotate(20)"/><use href="#spoke" transform="rotate(40)"/>
@@ -40,12 +40,13 @@
       <use href="#spoke" transform="rotate(240)"/><use href="#spoke" transform="rotate(260)"/><use href="#spoke" transform="rotate(280)"/>
       <use href="#spoke" transform="rotate(300)"/><use href="#spoke" transform="rotate(320)"/><use href="#spoke" transform="rotate(340)"/>
     </g>
+    <symbol id="star" viewBox="0 0 20 20"><path d="M10 .500l2.500 6.700 7.100.300-5.600 4.400 1.900 6.900L10 14.900 4.100 18.800 6 11.900.400 7.500l7.100-.300z"/></symbol>
     <symbol id="arrow" viewBox="0 0 30 14"><path d="M0 7h26M20 1l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
   </defs>
 </svg>
 
 <header class="masthead">
-  <a class="masthead__name" href="#top">Goodput Festival of Code</a>
+  <a class="masthead__name" href="#top"><span>Goodput<span class="masthead__long"> Festival of Code</span></span> <span class="masthead__sub">Official Programme</span></a>
   <nav aria-label="Programme contents">
     <ul>
       <li><a href="#record">Record attempt</a></li>
@@ -67,58 +68,63 @@
       <span class="cover__script">Festival of Code</span>
     </h1>
     <div class="cover__bill">
-      <div>
+      <div class="cover__when">
         <p class="cover__days caps">Tuesday &amp; Wednesday</p>
         <p class="cover__date">27 &amp; 28 April 2027</p>
-        <p class="cover__venue caps">Palace of Fine Arts · San Francisco</p>
+        <p class="cover__venue caps"><span class="nb">Palace of Fine Arts ·</span> <span class="nb">San Francisco</span></p>
       </div>
-      <div>
-        <p class="cover__offer">Two days of inference at full throttle. Headlining: a world record attempt for speed on NVIDIA Vera Rubin.</p>
+      <p class="cover__offer">Two days of inference at full throttle. Headlining: a world record attempt for speed on NVIDIA Vera Rubin.</p>
+      <div class="cover__act">
         <a class="btn" href="#entry" data-invite>Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
     </div>
   </div>
 
   <svg class="cover__plate" viewBox="0 0 1600 560" role="img" aria-labelledby="plate-title">
-    <title id="plate-title">A 1930s single-seater racing car, number B300, at speed past the rotunda and colonnade of the Palace of Fine Arts, as a marshal waves the chequered flag.</title>
+    <title id="plate-title">A 1930s single-seater racing car, number B300, at speed past the rotunda and colonnade of the Palace of Fine Arts, as a marshal holds out the chequered flag.</title>
 
-    <!-- first pass: stock knock-outs and vermilion -->
-    <g class="pass pass--red">
-      <circle class="b" cx="1392" cy="150" r="92"/>
-      <!-- colonnades -->
-      <rect class="b" x="796" y="350" width="270" height="18"/>
-      <path class="b" d="M806,368h14v84h-14z M850,368h14v84h-14z M894,368h14v84h-14z M938,368h14v84h-14z M982,368h14v84h-14z M1026,368h14v84h-14z"/>
-      <rect class="b" x="1356" y="350" width="244" height="18"/>
-      <path class="b" d="M1372,368h14v84h-14z M1416,368h14v84h-14z M1460,368h14v84h-14z M1504,368h14v84h-14z M1548,368h14v84h-14z M1592,368h14v84h-14z"/>
-      <rect class="r" x="800" y="322" width="40" height="28"/>
-      <rect class="r" x="932" y="322" width="40" height="28"/>
-      <!-- rotunda -->
-      <path class="r" d="M1070,262 A140,104 0 0 1 1350,262 Z"/>
-      <rect class="b" x="1076" y="258" width="268" height="46"/>
-      <rect class="b" x="1062" y="304" width="296" height="148"/>
-      <rect class="r" x="1058" y="300" width="304" height="10"/>
-      <!-- bunting, vermilion flags -->
-      <path class="r" d="M841,328h20l-10,26z M916,322h20l-10,26z M993,300h20l-10,26z M1381,282h20l-10,26z M1486,303h20l-10,26z"/>
-      <!-- the flag marshal -->
-      <path class="b" d="M139,352 C139,343 146,338 156,338 C166,338 172,343 173,352 L176,396 L172,440 L158,440 L156,402 L152,440 L138,440 L136,396 Z"/>
-      <path class="n sb" d="M170,348 C182,348 190,340 198,330" stroke-width="10" stroke-linecap="round"/>
-      <path class="n sb" d="M141,350 C134,362 132,374 134,388" stroke-width="9" stroke-linecap="round"/>
-      <circle class="b" cx="156" cy="324" r="11.500"/>
-      <!-- trackside, blurred by speed -->
-      <rect class="r" x="0" y="424" width="1600" height="6"/>
+    <!-- the stock showing through: nothing is printed here -->
+    <g class="pass pass--stock">
+      <g transform="translate(80 0)"><g class="palace">
+        <circle class="b" cx="1392" cy="150" r="92"/>
+        <rect class="b" x="796" y="350" width="270" height="18"/>
+        <path class="b" d="M806,368h14v84h-14z M850,368h14v84h-14z M894,368h14v84h-14z M938,368h14v84h-14z M982,368h14v84h-14z M1026,368h14v84h-14z"/>
+        <path class="b" d="M800,324h40v26h-40z M932,324h40v26h-40z"/>
+        <rect class="b" x="1356" y="350" width="244" height="18"/>
+        <path class="b" d="M1372,368h14v84h-14z M1416,368h14v84h-14z M1460,368h14v84h-14z M1504,368h14v84h-14z M1548,368h14v84h-14z M1592,368h14v84h-14z"/>
+        <rect class="b" x="1076" y="258" width="268" height="46"/>
+        <rect class="b" x="1062" y="304" width="296" height="148"/>
+      </g></g>
+      <!-- the flag marshal, in his white coat -->
+      <path class="b" d="M146,318 C152,314 170,314 176,318 L180,360 L185,406 L139,406 L142,360 Z"/>
+      <path class="n sb" d="M175,323 C186,326 196,328 206,326" stroke-width="10" stroke-linecap="round"/>
+      <path class="n sb" d="M147,323 L134,347 L146,364" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="b" cx="161" cy="303" r="11.500"/>
+      <!-- trackside and road -->
       <rect class="b" x="0" y="434" width="1600" height="18"/>
       <rect class="b" x="0" y="452" width="1600" height="108"/>
     </g>
 
+    <!-- first pass: vermilion, overprinting whatever lies beneath it -->
+    <g class="pass pass--red">
+      <g transform="translate(80 0)"><g class="palace">
+        <path class="r" d="M1070,262 A140,104 0 0 1 1350,262 Z"/>
+        <rect class="r" x="1058" y="300" width="304" height="10"/>
+        <path class="r" d="M841,328h20l-10,26z M916,322h20l-10,26z M993,300h20l-10,26z M1381,282h20l-10,26z M1486,303h20l-10,26z"/>
+      </g></g>
+      <rect class="r" x="0" y="424" width="1600" height="6"/>
+    </g>
+
     <!-- second pass: racing green, and what is knocked out of it -->
     <g class="pass pass--green">
-      <path class="g" d="M1380,350 C1366,318 1384,286 1414,284 C1420,254 1462,240 1490,258 C1516,236 1562,246 1574,276 C1596,274 1612,292 1608,316 L1608,350 Z"/>
-      <rect class="r" x="1440" y="322" width="40" height="28"/>
-      <rect class="r" x="1560" y="322" width="40" height="28"/>
-      <path class="g" d="M1166,452 L1166,356 A44,44 0 0 1 1254,356 L1254,452 Z"/>
-      <path class="g" d="M1088,452 L1088,362 A26,34 0 0 1 1140,362 L1140,452 Z"/>
-      <path class="g" d="M1280,452 L1280,362 A26,34 0 0 1 1332,362 L1332,452 Z"/>
-      <path class="g" d="M879,327h20l-10,26z M955,314h20l-10,26z M1033,283h20l-10,26z M1433,296h20l-10,26z M1538,305h20l-10,26z"/>
+      <g transform="translate(80 0)"><g class="palace">
+        <path class="g" d="M1380,350 C1366,318 1384,286 1414,284 C1420,254 1462,240 1490,258 C1516,236 1562,246 1574,276 C1596,274 1612,292 1608,316 L1608,350 Z"/>
+        <path class="b" d="M1440,324h40v26h-40z"/>
+        <path class="g" d="M1166,452 L1166,356 A44,44 0 0 1 1254,356 L1254,452 Z"/>
+        <path class="g" d="M1088,452 L1088,362 A26,34 0 0 1 1140,362 L1140,452 Z"/>
+        <path class="g" d="M1280,452 L1280,362 A26,34 0 0 1 1332,362 L1332,452 Z"/>
+        <path class="g" d="M879,327h20l-10,26z M955,314h20l-10,26z M1033,283h20l-10,26z M1433,296h20l-10,26z"/>
+      </g></g>
 
       <g transform="translate(330 258) skewX(-5)">
         <g class="car__body">
@@ -141,30 +147,38 @@
 
     <!-- third pass: the key plate, in black -->
     <g class="pass pass--ink">
-      <!-- rotunda keylines -->
-      <path d="M1262,167 A140,104 0 0 1 1350,262 L1292,262 Q1286,206 1262,167 Z" fill="url(#p-ht1)"/>
-      <path class="n si" d="M1210,158 L1210,262 M1150,170 Q1128,210 1120,262 M1270,170 Q1292,210 1300,262 M1102,198 Q1088,230 1084,262 M1318,198 Q1332,230 1336,262" stroke-width="1.5"/>
-      <path class="n si" d="M1068,258 L1352,258" stroke-width="3"/>
-      <path class="n si" d="M1056,304 L1364,304" stroke-width="3.5"/>
-      <path d="M1090,266h76v30h-76z M1176,266h68v30h-68z M1254,266h76v30h-76z" fill="url(#p-ht1)" stroke="#1B1915" stroke-width="1.4"/>
-      <path d="M1300,310 L1358,310 L1358,452 L1300,452 Z" fill="url(#p-ht1)"/>
-      <path class="n si" d="M1166,452 L1166,356 A44,44 0 0 1 1254,356 L1254,452 M1088,452 L1088,362 A26,34 0 0 1 1140,362 L1140,452 M1280,452 L1280,362 A26,34 0 0 1 1332,362 L1332,452" stroke-width="1.6"/>
-      <path class="i" d="M1073,316h3v136h-3z M1151,316h3v136h-3z M1265,316h3v136h-3z M1343,316h3v136h-3z M1064,310h14v7h-14z M1142,310h14v7h-14z M1256,310h14v7h-14z M1334,310h14v7h-14z"/>
-      <path class="n si" d="M1066,316 L1066,452 M1144,316 L1144,452 M1258,316 L1258,452 M1336,316 L1336,452" stroke-width="1.2"/>
-      <!-- colonnade keylines -->
-      <path class="n si" d="M796,350 L1066,350 M796,368 L1062,368 M1356,350 L1600,350 M1358,368 L1600,368" stroke-width="2"/>
-      <path class="i" d="M816,368h4v84h-4z M860,368h4v84h-4z M904,368h4v84h-4z M948,368h4v84h-4z M992,368h4v84h-4z M1036,368h4v84h-4z M1382,368h4v84h-4z M1426,368h4v84h-4z M1470,368h4v84h-4z M1514,368h4v84h-4z M1558,368h4v84h-4z"/>
-      <path class="n si" d="M800,322h40v28h-40z M932,322h40v28h-40z M1440,322h40v28h-40z M1560,322h40v28h-40z" stroke-width="1.5"/>
-      <!-- bunting strings and the black flags -->
-      <path class="n si" d="M826,326 Q950,340 1082,262 M1338,262 Q1470,320 1600,300" stroke-width="1.5"/>
-      <path class="i" d="M1071,266h20l-10,26z"/>
+      <g transform="translate(80 0)"><g class="palace">
+        <!-- rotunda -->
+        <path d="M1262,167 A140,104 0 0 1 1350,262 L1292,262 Q1286,206 1262,167 Z" fill="url(#p-ht1)"/>
+        <path class="n si" d="M1210,158 L1210,262 M1150,170 Q1128,210 1120,262 M1270,170 Q1292,210 1300,262 M1102,198 Q1088,230 1084,262 M1318,198 Q1332,230 1336,262" stroke-width="1.5"/>
+        <path class="n si" d="M1068,258 L1352,258" stroke-width="3"/>
+        <path class="n si" d="M1056,304 L1364,304" stroke-width="3.5"/>
+        <path d="M1090,266h76v30h-76z M1176,266h68v30h-68z M1254,266h76v30h-76z" fill="url(#p-ht1)" stroke="#1B1915" stroke-width="1.4"/>
+        <path d="M1300,310 L1358,310 L1358,452 L1300,452 Z" fill="url(#p-ht1)"/>
+        <path class="n si" d="M1166,452 L1166,356 A44,44 0 0 1 1254,356 L1254,452 M1088,452 L1088,362 A26,34 0 0 1 1140,362 L1140,452 M1280,452 L1280,362 A26,34 0 0 1 1332,362 L1332,452" stroke-width="1.6"/>
+        <path class="i" d="M1073,316h3v136h-3z M1151,316h3v136h-3z M1265,316h3v136h-3z M1343,316h3v136h-3z M1064,310h14v7h-14z M1142,310h14v7h-14z M1256,310h14v7h-14z M1334,310h14v7h-14z"/>
+        <path class="n si" d="M1066,316 L1066,452 M1144,316 L1144,452 M1258,316 L1258,452 M1336,316 L1336,452" stroke-width="1.2"/>
+        <!-- colonnades and their urn boxes -->
+        <path class="n si" d="M796,350 L1066,350 M796,368 L1062,368 M1356,350 L1600,350 M1358,368 L1600,368" stroke-width="2"/>
+        <path class="i" d="M816,368h4v84h-4z M860,368h4v84h-4z M904,368h4v84h-4z M948,368h4v84h-4z M992,368h4v84h-4z M1036,368h4v84h-4z M1382,368h4v84h-4z M1426,368h4v84h-4z M1470,368h4v84h-4z M1514,368h4v84h-4z M1558,368h4v84h-4z"/>
+        <path d="M800,324h40v26h-40z M932,324h40v26h-40z M1440,324h40v26h-40z" fill="none" stroke="#1B1915" stroke-width="1.5"/>
+        <path d="M826,324h14v26h-14z M958,324h14v26h-14z M1466,324h14v26h-14z" fill="url(#p-ht2)"/>
+        <path class="n si" d="M796,324 L844,324 M928,324 L976,324 M1436,324 L1484,324" stroke-width="2.4"/>
+        <!-- bunting strings and the black flags -->
+        <path class="n si" d="M826,324 Q950,340 1082,262 M1338,262 Q1470,320 1600,300" stroke-width="1.5"/>
+        <path class="i" d="M1071,266h20l-10,26z M1538,305h20l-10,26z"/>
+      </g></g>
+
       <!-- the flag marshal, keyed -->
-      <path d="M210,300 C232,292 252,310 282,298 L288,340 C258,352 238,334 214,344 Z" fill="url(#p-check)" stroke="#1B1915" stroke-width="1.8" stroke-linejoin="round"/>
-      <path class="n si" d="M196,334 L214,292" stroke-width="3.2" stroke-linecap="round"/>
-      <path class="i" d="M143,321 C143,310 152,306 160,307 C167,308 171,313 170,318 L178,321 L177,324 L143,324 Z"/>
-      <path d="M158,338 C166,338 172,343 173,352 L176,396 L172,440 L162,440 L162,400 C164,380 164,356 158,338 Z" fill="url(#p-ht2)"/>
-      <path class="n si" d="M156,402 L156,440 M137,384 L175,384" stroke-width="1.6"/>
-      <circle class="i" cx="198" cy="330" r="5"/>
+      <path d="M221,288 C244,280 266,296 298,286 L303,326 C273,336 250,320 227,328 Z" fill="url(#p-check)" stroke="#1B1915" stroke-width="1.8" stroke-linejoin="round"/>
+      <path class="n si" d="M203,334 L222,286" stroke-width="3.2" stroke-linecap="round"/>
+      <path class="i" d="M149,300 C149,290 158,286 166,287 C173,288 177,293 176,297 L185,300 L184,304 L149,303 Z"/>
+      <path d="M146,318 C149,316 154,315 160,315 L158,360 L160,406 L139,406 L142,360 Z" fill="url(#p-ht2)"/>
+      <path class="i" d="M146,406 L159,406 L158,440 L147,440 Z M165,406 L178,406 L177,440 L167,440 Z"/>
+      <path class="n si" d="M153,316 L161,328 L169,316 M161,330 L161,406 M142,366 L182,366" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle class="i" cx="165" cy="342" r="2"/><circle class="i" cx="165" cy="356" r="2"/>
+      <circle class="i" cx="206" cy="326" r="5"/><circle class="i" cx="146" cy="364" r="4.500"/>
+
       <!-- trackside -->
       <rect x="0" y="434" width="1600" height="18" fill="url(#p-straw)"/>
       <path class="n si" d="M0,434 L1600,434" stroke-width="1.4"/>
@@ -182,8 +196,8 @@
         <path class="n sb streak streak--slow" d="M-80,166 L46,166" stroke-width="3"/>
         <g class="dust">
           <path class="i" d="M96,232 l-22,-9 3,-5z M78,238 l-30,-4 1,-5z M60,226 l-26,-14 4,-4z M40,240 l-34,2 0,-5z M22,222 l-24,-10 3,-4z"/>
-          <circle class="i" cx="-8" cy="232" r="3"/><circle class="i" cx="-30" cy="218" r="2.4"/><circle class="i" cx="-52" cy="236" r="2.8"/>
-          <circle class="i" cx="-74" cy="226" r="2"/><circle class="i" cx="-18" cy="204" r="2"/><circle class="i" cx="-96" cy="238" r="2.2"/>
+          <circle class="i" cx="-8" cy="232" r="3"/><circle class="i" cx="-30" cy="218" r="2.400"/><circle class="i" cx="-52" cy="236" r="2.800"/>
+          <circle class="i" cx="-74" cy="226" r="2"/><circle class="i" cx="-18" cy="204" r="2"/><circle class="i" cx="-96" cy="238" r="2.200"/>
         </g>
 
         <g class="car__body">
@@ -217,7 +231,7 @@
           <g class="spin"><use href="#spokes"/></g>
           <circle class="n si" r="54" stroke-width="17"/><circle class="n si" r="41" stroke-width="1.6"/>
           <path class="n sb" d="M-52,-18 A55,55 0 0 1 -18,-52" stroke-width="2.4" stroke-linecap="round"/>
-          <circle class="i" r="9"/><circle class="r" r="4.6"/>
+          <circle class="i" r="9"/><circle class="r" r="4.600"/>
         </g>
         <!-- front wheel -->
         <g transform="translate(610 180)">
@@ -225,7 +239,7 @@
           <g class="spin"><use href="#spokes"/></g>
           <circle class="n si" r="54" stroke-width="17"/><circle class="n si" r="41" stroke-width="1.6"/>
           <path class="n sb" d="M-52,-18 A55,55 0 0 1 -18,-52" stroke-width="2.4" stroke-linecap="round"/>
-          <circle class="i" r="9"/><circle class="r" r="4.6"/>
+          <circle class="i" r="9"/><circle class="r" r="4.600"/>
         </g>
       </g>
     </g>
@@ -292,13 +306,13 @@
       </li>
       <li>
         <a class="event" href="#drivers">
-          <span class="event__name" data-fit><span>Volozh · Chernin · LeCun · Teknium</span></span>
+          <span class="event__name event__name--fat" data-fit><span><span class="nb">Volozh <svg class="star" aria-hidden="true"><use href="#star"/></svg> Chernin <svg class="star" aria-hidden="true"><use href="#star"/></svg></span> <span class="nb">LeCun <svg class="star" aria-hidden="true"><use href="#star"/></svg> Teknium</span></span></span>
           <span class="event__who"><span>The drivers, on the rostrum</span><span class="card__dots"></span><span class="event__go">Page four <svg aria-hidden="true"><use href="#arrow"/></svg></span></span>
         </a>
       </li>
       <li>
         <a class="event" href="#frontiers">
-          <span class="event__name" data-fit><span>New Frontiers of Performance</span></span>
+          <span class="event__name" data-fit><span><span class="nb">New Frontiers</span> <span class="nb">of Performance</span></span></span>
           <span class="event__who"><span>Cursor · Higgsfield · Cognition, on Nebius AI Cloud</span><span class="card__dots"></span><span class="event__go">Page five <svg aria-hidden="true"><use href="#arrow"/></svg></span></span>
         </a>
       </li>
@@ -342,28 +356,27 @@
           <text class="dial__num" x="512" y="320" dy=".35em">10</text>
           <text class="dial__num" x="497" y="395" dy=".35em">11</text>
           <text class="dial__num" x="456" y="456" dy=".35em">12</text>
-          <text class="dial__maker" x="320" y="232">Goodput</text>
-          <text class="dial__label" x="320" y="262">Tokens per second</text>
-          <text class="dial__fine" x="320" y="282">× 1,000 · Chronometric</text>
+          <text class="dial__maker" x="320" y="230">Goodput</text>
+          <text class="dial__label" x="320" y="261">Tokens per second</text>
+          <text class="dial__fine" x="320" y="285">× 1,000</text>
           <!-- odometer -->
-          <rect class="b" x="215" y="398" width="210" height="46"/>
-          <path class="n si" d="M245,398v46 M275,398v46 M305,398v46 M335,398v46 M365,398v46 M395,398v46" stroke-width="1.6"/>
+          <rect class="b" x="229" y="446" width="182" height="44"/>
+          <path class="n si" d="M255,446v44 M281,446v44 M307,446v44 M333,446v44 M359,446v44 M385,446v44" stroke-width="1.5"/>
           <g class="dial__digits">
-            <text class="dial__digit" x="230" y="432">0</text><text class="dial__digit" x="260" y="432">0</text>
-            <text class="dial__digit" x="290" y="432">0</text><text class="dial__digit" x="320" y="432">0</text>
-            <text class="dial__digit" x="350" y="432">0</text><text class="dial__digit" x="380" y="432">0</text>
-            <text class="dial__digit" x="410" y="432">0</text>
+            <text class="dial__digit" x="242" y="479">0</text><text class="dial__digit" x="268" y="479">0</text>
+            <text class="dial__digit" x="294" y="479">0</text><text class="dial__digit" x="320" y="479">0</text>
+            <text class="dial__digit" x="346" y="479">0</text><text class="dial__digit" x="372" y="479">0</text>
+            <text class="dial__digit" x="398" y="479">0</text>
           </g>
-          <text class="dial__fine" x="320" y="466">Your forecast · T.P.S.</text>
+          <text class="dial__fine" x="320" y="513">Your forecast · t.p.s.</text>
         </g>
         <g class="dial__stamp">
-          <rect class="i" x="196" y="486" width="248" height="46"/>
-          <rect class="n sy" x="196" y="486" width="248" height="46" stroke-width="3"/>
-          <text x="320" y="518" text-anchor="middle">Off the clock</text>
+          <rect class="i" x="222" y="532" width="196" height="38"/>
+          <rect class="n sy" x="222" y="532" width="196" height="38" stroke-width="3"/>
+          <text x="320" y="558.500" text-anchor="middle">Off the clock</text>
         </g>
         <g class="dial__needle">
           <path class="r" d="M314,320 L318.400,98 L320,82 L321.600,98 L326,320 Z"/>
-          <path class="r" d="M312,320 L328,320 L325,376 L315,376 Z"/>
         </g>
         <circle class="b" cx="320" cy="320" r="24"/>
         <circle class="n si" cx="320" cy="320" r="24" stroke-width="2"/>
@@ -412,7 +425,7 @@
 
     <div class="grid">
       <article class="slot">
-          <figure class="slot__plate"><img src="assets/img/driver-volozh.svg" width="320" height="380" alt="Arkady Volozh, drawn as a racing driver in a 1950s hard helmet with goggles raised." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>B300</span></figure>
+          <figure class="slot__plate"><img src="assets/img/driver-volozh.svg" width="320" height="380" alt="Arkady Volozh, drawn as a racing driver in a 1950s hard helmet with goggles raised, in racing overalls." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>B300</span></figure>
           <div class="slot__entry">
             <h3>Arkady Volozh</h3>
             <dl class="card">
@@ -434,7 +447,7 @@
       </article>
 
       <article class="slot">
-          <figure class="slot__plate"><img src="assets/img/driver-lecun.svg" width="320" height="380" alt="Yann LeCun, drawn as a racing driver in a reversed tweed cap, round spectacles and a spotted bow tie." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>H200</span></figure>
+          <figure class="slot__plate"><img src="assets/img/driver-lecun.svg" width="320" height="380" alt="Yann LeCun, drawn as a racing driver in a reversed tweed cap and round spectacles, in racing overalls with a spotted bow tie." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>H200</span></figure>
           <div class="slot__entry">
             <h3>Yann LeCun</h3>
             <dl class="card">
@@ -465,7 +478,7 @@
 <!-- ============ PAGE FIVE: THE INSERT ============ -->
 <section class="page page--salmon" id="frontiers" aria-labelledby="frontiers-title">
   <div class="sheet insert">
-    <h2 class="bill" id="frontiers-title">New Frontiers of Performance</h2>
+    <h2 class="bill" id="frontiers-title"><span class="nb">New Frontiers</span> <span class="nb">of Performance</span></h2>
     <p class="insert__lede">Three Nebius AI Cloud customers take the line to show what running at the limit looks like in their own trade.</p>
     <ul class="entrants">
       <li><span class="entrant__name" data-fit data-fit-max="150"><span>Cursor</span></span><span class="entrant__trade">The AI code editor</span></li>
@@ -563,17 +576,22 @@
       <span class="coupon__script" aria-hidden="true">for the paddock</span>
     </div>
     <div class="coupon__body">
-      <p>Admission to the paddock is by invitation. Send in your entry and the Secretary of the Meeting will reply.</p>
-      <div class="coupon__actions">
-        <a class="btn" href="#entry-closed" data-invite="final">Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
-        <a class="coupon__date-link" href="assets/goodput-festival-of-code.ics" download>Save the date</a>
+      <div class="coupon__closed" id="entry-closed">
+        <p>Admission to the paddock is by invitation, and the entry office opens shortly. Save the date, and call again.</p>
+        <div class="coupon__actions">
+          <a class="btn" href="assets/goodput-festival-of-code.ics" download>Save the date <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+          <span class="stamp">Entries open shortly</span>
+        </div>
       </div>
-      <div class="coupon__closed" id="entry-closed" role="status" tabindex="-1">
-        <span class="stamp">Entries open shortly</span>
-        <p>The entry office is not yet receiving forms. Save the date, and call again.</p>
+      <div class="coupon__open" id="entry-open" hidden>
+        <p>Admission to the paddock is by invitation. Send in your entry and the Secretary of the Meeting will reply.</p>
+        <div class="coupon__actions">
+          <a class="btn" href="#entry" data-invite>Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="coupon__date-link" href="assets/goodput-festival-of-code.ics" download>Save the date</a>
+        </div>
       </div>
     </div>
-    <p class="coupon__particulars caps"><span>Goodput Festival of Code</span><span>Tuesday 27 &amp; Wednesday 28 April 2027</span><span>Palace of Fine Arts, San Francisco</span></p>
+    <p class="coupon__particulars caps"><span>Goodput Festival of Code</span><span><span class="nb">Tuesday 27 &amp; Wednesday 28</span> <span class="nb">April 2027</span></span><span>Palace of Fine Arts, San Francisco</span></p>
   </div>
 </section>
 

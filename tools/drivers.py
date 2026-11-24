@@ -9,8 +9,8 @@ import sys
 from pathlib import Path
 
 INK = "#1B1915"
-PAPER = "#E9DDBF"
-RED = "#B82B16"
+PAPER = "#E8D6AA"
+RED = "#B22812"
 GREEN = "#0F3D2C"
 YELLOW = "#F6C02A"
 
@@ -218,16 +218,27 @@ def torso(kind, spot):
   <path d="M160,330 L160,372" stroke="{INK}" stroke-width="2"/>
   <circle cx="160" cy="346" r="4" fill="{INK}"/><circle cx="160" cy="364" r="4" fill="{INK}"/>
   <path d="M60,340 C52,350 48,360 46,372 M260,340 C268,350 272,360 274,372" stroke="{INK}" stroke-width="1.6" fill="none"/>"""
-    if kind == "polo":
-        # short-sleeved sports shirt, the 1950s works driver
+    if kind == "zip":
+        # 1950s zip-fronted racing overalls with a coloured collar and a breast pocket
         return f"""
   <path d="{base}" fill="{PAPER}"/>
   <path d="{base}" fill="url(#ht1)"/>
   <path d="M190,302 C228,312 284,326 298,356 L298,372 L210,372 C214,346 206,322 190,302 Z" fill="url(#ht2)"/>
   <path d="M128,298 L104,322 L140,346 L160,318 L180,346 L216,322 L192,298 L160,318 Z" fill="{spot}" stroke="{INK}" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M160,320 L160,372" stroke="{INK}" stroke-width="2"/>
-  <circle cx="160" cy="342" r="3.6" fill="{INK}"/><circle cx="160" cy="360" r="3.6" fill="{INK}"/>
+  <path d="M157,322 L157,372 M163,322 L163,372" stroke="{INK}" stroke-width="1.6"/>
+  <path d="M157,330 h6 M157,338 h6 M157,346 h6 M157,354 h6 M157,362 h6" stroke="{INK}" stroke-width="1.2"/>
+  <rect x="155" y="322" width="10" height="9" rx="1.5" fill="{INK}"/>
+  <path d="M86,344 h40 v28 h-40 z" fill="{PAPER}" stroke="{INK}" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M86,352 h40" stroke="{INK}" stroke-width="1.6"/>
+  <circle cx="106" cy="358" r="2" fill="{INK}"/>
   <path d="M58,340 C50,350 46,360 44,372 M262,340 C270,350 274,360 276,372" stroke="{INK}" stroke-width="1.6" fill="none"/>"""
+    if kind == "overalls_bow":
+        # white overalls over a soft collar and a spotted bow tie, the 1920s way
+        return torso("overalls", spot) + f"""
+  <path d="M160,321 L133,309 L135,339 Z M160,321 L187,309 L185,339 Z" fill="{spot}" stroke="{INK}" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="143" cy="323" r="2.2" fill="{INK}"/><circle cx="177" cy="323" r="2.2" fill="{INK}"/>
+  <circle cx="150" cy="329" r="1.8" fill="{INK}"/><circle cx="170" cy="329" r="1.8" fill="{INK}"/>
+  <rect x="154" y="315" width="12" height="13" rx="2" fill="{spot}" stroke="{INK}" stroke-width="2"/>"""
     if kind == "tweed":
         # tweed jacket, soft collar and a spotted bow tie
         return f"""
@@ -304,11 +315,11 @@ def svg(title, spot, body):
 
 def volozh():
     spot = GREEN
-    body = (disc(spot) + torso("polo", spot) + neck() + face() + temples_grey() + lines_age()
+    body = (disc(spot) + torso("zip", spot) + neck() + face() + temples_grey() + lines_age()
             + eyes("M120,176 Q135,170 150,175", "M171,175 Q186,170 200,176", lid=3)
             + nose() + mouth("level") + rimless() + basin_helmet(spot)
             + goggles_up("url(#ht1)", y=128, on_ink=False))
-    return svg("Illustrated portrait of a driver in a 1950s hard helmet, goggles raised, wearing wire spectacles and a sports shirt.", spot, body)
+    return svg("Illustrated portrait of a driver in a 1950s hard helmet, goggles raised, wearing wire spectacles and zip-fronted racing overalls.", spot, body)
 
 
 def chernin():
@@ -322,11 +333,11 @@ def chernin():
 def lecun():
     spot = YELLOW
     jaw = "M102,168 C102,218 112,246 134,261 C146,270 174,270 186,261 C208,246 218,218 218,168 L218,136 L102,136 Z"
-    body = (disc(spot) + torso("tweed", spot) + neck() + side_hair() + face(jaw=jaw)
+    body = (disc(spot) + torso("overalls_bow", spot) + neck() + side_hair() + face(jaw=jaw)
             + eyes("M118,171 Q134,160 151,170", "M170,170 Q187,160 202,171", lid=3, smile=True)
             + nose() + mouth("smile") + spectacles() + flat_cap(spot)
             + goggles_up(spot, y=112, on_ink=True))
-    return svg("Illustrated portrait of a smiling driver in a reversed tweed cap and raised goggles, with round spectacles, a tweed jacket and a spotted bow tie.", spot, body)
+    return svg("Illustrated portrait of a smiling driver in a reversed tweed cap and raised goggles, with round spectacles, in white racing overalls with a spotted bow tie.", spot, body)
 
 
 def teknium():
