@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goodput Festival of Code · 27 &amp; 28 April 2027 · Palace of Fine Arts, San Francisco</title>
+<meta name="description" content="Two days of inference at full throttle at the Palace of Fine Arts, San Francisco, 27 and 28 April 2027. Headlining: a world record attempt for inference speed on NVIDIA Vera Rubin.">
+<meta name="theme-color" content="#1B1915">
+<meta property="og:title" content="Goodput Festival of Code">
+<meta property="og:description" content="27 &amp; 28 April 2027, Palace of Fine Arts, San Francisco. A race meeting for inference, with a world record attempt on NVIDIA Vera Rubin.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/rammetto-one-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/stint-ultra-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hammersmith-one-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/programme.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#meeting">Skip to the programme</a>
+
+<!-- screens and hatches shared by every plate -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="p-ht1" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="2.5" cy="2.5" r="1.05" fill="#1B1915"/></pattern>
+    <pattern id="p-ht2" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="2.5" cy="2.5" r="1.7" fill="#1B1915"/></pattern>
+    <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)"><rect width="6" height="2.2" fill="#1B1915"/></pattern>
+    <pattern id="p-straw" width="26" height="6" patternUnits="userSpaceOnUse"><path d="M0 2h17M9 5h17" stroke="#1B1915" stroke-width="1.1"/></pattern>
+    <pattern id="p-water" width="34" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q8.500 -6 17 0 t17 0" fill="none" stroke="#0F3D2C" stroke-width="1.3"/></pattern>
+    <pattern id="p-gdots" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="2.5" cy="2.5" r="1.3" fill="#0F3D2C"/></pattern>
+    <pattern id="p-check" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><rect width="18" height="18" fill="#E9DDBF"/><rect width="9" height="9" fill="#1B1915"/><rect x="9" y="9" width="9" height="9" fill="#1B1915"/></pattern>
+    <pattern id="p-bdots" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3" cy="3" r="1.3" fill="#E9DDBF"/></pattern>
+    <g id="spoke"><path d="M0,-9 L5,-42 M0,-9 L-5,-42" stroke="#1B1915" stroke-width="1.4" fill="none"/></g>
+    <g id="spokes">
+      <use href="#spoke"/><use href="#spoke" transform="rotate(20)"/><use href="#spoke" transform="rotate(40)"/>
+      <use href="#spoke" transform="rotate(60)"/><use href="#spoke" transform="rotate(80)"/><use href="#spoke" transform="rotate(100)"/>
+      <use href="#spoke" transform="rotate(120)"/><use href="#spoke" transform="rotate(140)"/><use href="#spoke" transform="rotate(160)"/>
+      <use href="#spoke" transform="rotate(180)"/><use href="#spoke" transform="rotate(200)"/><use href="#spoke" transform="rotate(220)"/>
+      <use href="#spoke" transform="rotate(240)"/><use href="#spoke" transform="rotate(260)"/><use href="#spoke" transform="rotate(280)"/>
+      <use href="#spoke" transform="rotate(300)"/><use href="#spoke" transform="rotate(320)"/><use href="#spoke" transform="rotate(340)"/>
+    </g>
+    <symbol id="arrow" viewBox="0 0 30 14"><path d="M0 7h26M20 1l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <a class="masthead__name" href="#top">Goodput Festival of Code</a>
+  <nav aria-label="Programme contents">
+    <ul>
+      <li><a href="#record">Record attempt</a></li>
+      <li><a href="#drivers">Drivers</a></li>
+      <li><a href="#frontiers">New frontiers</a></li>
+      <li><a href="#paddock">Paddock</a></li>
+    </ul>
+  </nav>
+  <a class="masthead__cta" href="#entry" data-invite>Request an invitation</a>
+</header>
+
+<main>
+
+<!-- ============ COVER ============ -->
+<section class="cover" id="top" aria-labelledby="cover-title">
+  <div class="cover__text">
+    <h1 id="cover-title">
+      <span class="cover__goodput" data-fit><span>Goodput</span></span>
+      <span class="cover__script">Festival of Code</span>
+    </h1>
+    <div class="cover__bill">
+      <div>
+        <p class="cover__days caps">Tuesday &amp; Wednesday</p>
+        <p class="cover__date">27 &amp; 28 April 2027</p>
+        <p class="cover__venue caps">Palace of Fine Arts · San Francisco</p>
+      </div>
+      <div>
+        <p class="cover__offer">Two days of inference at full throttle. Headlining: a world record attempt for speed on NVIDIA Vera Rubin.</p>
+        <a class="btn" href="#entry" data-invite>Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <svg class="cover__plate" viewBox="0 0 1600 560" role="img" aria-labelledby="plate-title">
+    <title id="plate-title">A 1930s single-seater racing car, number B300, at speed past the rotunda and colonnade of the Palace of Fine Arts, as a marshal waves the chequered flag.</title>
+
+    <!-- first pass: stock knock-outs and vermilion -->
+    <g class="pass pass--red">
+      <circle class="b" cx="1392" cy="150" r="92"/>
+      <!-- colonnades -->
+      <rect class="b" x="796" y="350" width="270" height="18"/>
+      <path class="b" d="M806,368h14v84h-14z M850,368h14v84h-14z M894,368h14v84h-14z M938,368h14v84h-14z M982,368h14v84h-14z M1026,368h14v84h-14z"/>
+      <rect class="b" x="1356" y="350" width="244" height="18"/>
+      <path class="b" d="M1372,368h14v84h-14z M1416,368h14v84h-14z M1460,368h14v84h-14z M1504,368h14v84h-14z M1548,368h14v84h-14z M1592,368h14v84h-14z"/>
+      <rect class="r" x="800" y="322" width="40" height="28"/>
+      <rect class="r" x="932" y="322" width="40" height="28"/>
+      <!-- rotunda -->
+      <path class="r" d="M1070,262 A140,104 0 0 1 1350,262 Z"/>
+      <rect class="b" x="1076" y="258" width="268" height="46"/>
+      <rect class="b" x="1062" y="304" width="296" height="148"/>
+      <rect class="r" x="1058" y="300" width="304" height="10"/>
+      <!-- bunting, vermilion flags -->
+      <path class="r" d="M841,328h20l-10,26z M916,322h20l-10,26z M993,300h20l-10,26z M1381,282h20l-10,26z M1486,303h20l-10,26z"/>
+      <!-- the flag marshal -->
+      <path class="b" d="M139,352 C139,343 146,338 156,338 C166,338 172,343 173,352 L176,396 L172,440 L158,440 L156,402 L152,440 L138,440 L136,396 Z"/>
+      <path class="n sb" d="M170,348 C182,348 190,340 198,330" stroke-width="10" stroke-linecap="round"/>
+      <path class="n sb" d="M141,350 C134,362 132,374 134,388" stroke-width="9" stroke-linecap="round"/>
+      <circle class="b" cx="156" cy="324" r="11.500"/>
+      <!-- trackside, blurred by speed -->
+      <rect class="r" x="0" y="424" width="1600" height="6"/>
+      <rect class="b" x="0" y="434" width="1600" height="18"/>
+      <rect class="b" x="0" y="452" width="1600" height="108"/>
+    </g>
+
+    <!-- second pass: racing green, and what is knocked out of it -->
+    <g class="pass pass--green">
+      <path class="g" d="M1380,350 C1366,318 1384,286 1414,284 C1420,254 1462,240 1490,258 C1516,236 1562,246 1574,276 C1596,274 1612,292 1608,316 L1608,350 Z"/>
+      <rect class="r" x="1440" y="322" width="40" height="28"/>
+      <rect class="r" x="1560" y="322" width="40" height="28"/>
+      <path class="g" d="M1166,452 L1166,356 A44,44 0 0 1 1254,356 L1254,452 Z"/>
+      <path class="g" d="M1088,452 L1088,362 A26,34 0 0 1 1140,362 L1140,452 Z"/>
+      <path class="g" d="M1280,452 L1280,362 A26,34 0 0 1 1332,362 L1332,452 Z"/>
+      <path class="g" d="M879,327h20l-10,26z M955,314h20l-10,26z M1033,283h20l-10,26z M1433,296h20l-10,26z M1538,305h20l-10,26z"/>
+
+      <g transform="translate(330 258) skewX(-5)">
+        <g class="car__body">
+          <g class="scarf">
+            <path class="r" d="M314,84 C282,72 252,88 214,72 L208,88 C246,104 282,92 312,98 Z"/>
+            <path class="r" d="M312,92 C290,100 270,100 246,110 L250,120 C276,112 296,112 314,102 Z"/>
+          </g>
+          <path class="b" d="M288,128 C282,104 290,86 306,80 L332,82 C342,92 346,110 344,128 Z"/>
+          <path class="b" d="M324,40 C338,40 346,50 346,60 C346,72 340,82 330,84 L316,84 L316,44 Z"/>
+          <path class="g" d="M48,152 C112,116 204,96 272,94 Q282,122 304,124 L350,124 Q364,122 372,98 C480,94 610,104 694,120 C716,126 722,152 716,192 L700,204 L124,204 C92,202 62,184 48,152 Z"/>
+          <path class="n sb" d="M150,119 C206,104 246,99 266,98" stroke-width="3.5" stroke-linecap="round"/>
+          <path class="n sb" d="M394,102 C490,99 600,108 684,122" stroke-width="3.5" stroke-linecap="round"/>
+          <ellipse class="b" cx="420" cy="152" rx="50" ry="36"/>
+          <path class="b" d="M372,98 L388,66 L395,68 L381,100 Z"/>
+          <path class="n sb" d="M320,94 C340,98 352,104 366,110" stroke-width="13" stroke-linecap="round"/>
+          <circle class="b" cx="150" cy="110" r="6"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- third pass: the key plate, in black -->
+    <g class="pass pass--ink">
+      <!-- rotunda keylines -->
+      <path d="M1262,167 A140,104 0 0 1 1350,262 L1292,262 Q1286,206 1262,167 Z" fill="url(#p-ht1)"/>
+      <path class="n si" d="M1210,158 L1210,262 M1150,170 Q1128,210 1120,262 M1270,170 Q1292,210 1300,262 M1102,198 Q1088,230 1084,262 M1318,198 Q1332,230 1336,262" stroke-width="1.5"/>
+      <path class="n si" d="M1068,258 L1352,258" stroke-width="3"/>
+      <path class="n si" d="M1056,304 L1364,304" stroke-width="3.5"/>
+      <path d="M1090,266h76v30h-76z M1176,266h68v30h-68z M1254,266h76v30h-76z" fill="url(#p-ht1)" stroke="#1B1915" stroke-width="1.4"/>
+      <path d="M1300,310 L1358,310 L1358,452 L1300,452 Z" fill="url(#p-ht1)"/>
+      <path class="n si" d="M1166,452 L1166,356 A44,44 0 0 1 1254,356 L1254,452 M1088,452 L1088,362 A26,34 0 0 1 1140,362 L1140,452 M1280,452 L1280,362 A26,34 0 0 1 1332,362 L1332,452" stroke-width="1.6"/>
+      <path class="i" d="M1073,316h3v136h-3z M1151,316h3v136h-3z M1265,316h3v136h-3z M1343,316h3v136h-3z M1064,310h14v7h-14z M1142,310h14v7h-14z M1256,310h14v7h-14z M1334,310h14v7h-14z"/>
+      <path class="n si" d="M1066,316 L1066,452 M1144,316 L1144,452 M1258,316 L1258,452 M1336,316 L1336,452" stroke-width="1.2"/>
+      <!-- colonnade keylines -->
+      <path class="n si" d="M796,350 L1066,350 M796,368 L1062,368 M1356,350 L1600,350 M1358,368 L1600,368" stroke-width="2"/>
+      <path class="i" d="M816,368h4v84h-4z M860,368h4v84h-4z M904,368h4v84h-4z M948,368h4v84h-4z M992,368h4v84h-4z M1036,368h4v84h-4z M1382,368h4v84h-4z M1426,368h4v84h-4z M1470,368h4v84h-4z M1514,368h4v84h-4z M1558,368h4v84h-4z"/>
+      <path class="n si" d="M800,322h40v28h-40z M932,322h40v28h-40z M1440,322h40v28h-40z M1560,322h40v28h-40z" stroke-width="1.5"/>
+      <!-- bunting strings and the black flags -->
+      <path class="n si" d="M826,326 Q950,340 1082,262 M1338,262 Q1470,320 1600,300" stroke-width="1.5"/>
+      <path class="i" d="M1071,266h20l-10,26z"/>
+      <!-- the flag marshal, keyed -->
+      <path d="M210,300 C232,292 252,310 282,298 L288,340 C258,352 238,334 214,344 Z" fill="url(#p-check)" stroke="#1B1915" stroke-width="1.8" stroke-linejoin="round"/>
+      <path class="n si" d="M196,334 L214,292" stroke-width="3.2" stroke-linecap="round"/>
+      <path class="i" d="M143,321 C143,310 152,306 160,307 C167,308 171,313 170,318 L178,321 L177,324 L143,324 Z"/>
+      <path d="M158,338 C166,338 172,343 173,352 L176,396 L172,440 L162,440 L162,400 C164,380 164,356 158,338 Z" fill="url(#p-ht2)"/>
+      <path class="n si" d="M156,402 L156,440 M137,384 L175,384" stroke-width="1.6"/>
+      <circle class="i" cx="198" cy="330" r="5"/>
+      <!-- trackside -->
+      <rect x="0" y="434" width="1600" height="18" fill="url(#p-straw)"/>
+      <path class="n si" d="M0,434 L1600,434" stroke-width="1.4"/>
+      <path class="n si" d="M0,452 L1600,452" stroke-width="2.6"/>
+      <ellipse cx="702" cy="503" rx="372" ry="9" fill="url(#p-ht2)"/>
+      <!-- the road, streaked -->
+      <path class="n si streak" d="M0,474 L1600,474" stroke-width="1.6"/>
+      <path class="n sg streak streak--slow" d="M0,520 L1600,520" stroke-width="3"/>
+      <path class="n si streak" d="M0,544 L1600,544" stroke-width="1.4"/>
+
+      <g transform="translate(330 258) skewX(-5)">
+        <!-- wake -->
+        <path class="n sb streak" d="M-96,112 L40,112" stroke-width="5"/>
+        <path class="n si streak streak--slow" d="M-110,140 L50,140" stroke-width="2.4"/>
+        <path class="n sb streak streak--slow" d="M-80,166 L46,166" stroke-width="3"/>
+        <g class="dust">
+          <path class="i" d="M96,232 l-22,-9 3,-5z M78,238 l-30,-4 1,-5z M60,226 l-26,-14 4,-4z M40,240 l-34,2 0,-5z M22,222 l-24,-10 3,-4z"/>
+          <circle class="i" cx="-8" cy="232" r="3"/><circle class="i" cx="-30" cy="218" r="2.4"/><circle class="i" cx="-52" cy="236" r="2.8"/>
+          <circle class="i" cx="-74" cy="226" r="2"/><circle class="i" cx="-18" cy="204" r="2"/><circle class="i" cx="-96" cy="238" r="2.2"/>
+        </g>
+
+        <g class="car__body">
+          <path class="i" d="M296,60 C294,40 308,30 322,30 C336,30 344,38 346,48 L328,50 L324,84 L306,84 C300,78 296,70 296,60 Z"/>
+          <ellipse class="i sb" cx="337" cy="57" rx="8" ry="7" stroke-width="2"/>
+          <path class="n sb" d="M300,55 L328,56" stroke-width="3"/>
+          <path d="M288,128 C282,104 290,86 306,80 L314,82 C302,92 300,112 302,128 Z" fill="url(#p-ht2)"/>
+          <circle class="i" cx="366" cy="110" r="7"/>
+          <path class="n si" d="M362,92 C374,100 376,116 368,124" stroke-width="4" stroke-linecap="round"/>
+          <path class="n si" d="M372,98 L388,66 L395,68 L381,100" stroke-width="2"/>
+          <path d="M62,170 L716,170 L716,192 L712,196 L140,196 C110,196 82,186 62,170 Z" fill="url(#p-hatch)" opacity=".5"/>
+          <path class="i" d="M56,166 C86,190 110,196 140,196 L714,196 L700,204 L124,204 C92,202 66,186 56,166 Z"/>
+          <path class="i" d="M690,119 C716,126 722,152 716,192 L704,202 L690,202 Z"/>
+          <path class="n sb" d="M696,130 L696,198 M702,132 L702,198 M708,136 L708,196 M713,144 L713,190" stroke-width="1.6"/>
+          <circle class="b si" cx="692" cy="115" r="5" stroke-width="2"/>
+          <path class="n si" d="M506,130 L498,168 M521,131 L513,168 M536,132 L528,168 M551,133 L543,168 M566,134 L558,168 M581,136 L573,168 M596,138 L588,168 M611,140 L603,168 M626,142 L618,168 M641,145 L633,168" stroke-width="3.4" stroke-linecap="round"/>
+          <path class="n si" d="M482,96 L476,204 M668,116 L664,204" stroke-width="7"/>
+          <path class="b si" d="M472,140h14v10h-14z M659,150h14v10h-14z" stroke-width="2"/>
+          <ellipse class="n si" cx="420" cy="152" rx="50" ry="36" stroke-width="2.6"/>
+          <text class="plate-num i" x="420" y="161.500" text-anchor="middle" textLength="80" lengthAdjust="spacingAndGlyphs">B300</text>
+          <path class="n si" d="M366,188 C300,192 200,188 40,180" stroke-width="9" stroke-linecap="round"/>
+          <path class="n sb" d="M360,186 C300,189 200,185 46,178" stroke-width="1.8"/>
+          <circle class="n si" cx="150" cy="110" r="6" stroke-width="2"/>
+          <path class="n si" d="M392,110 C490,107 600,116 684,130" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/>
+          <path class="n si" d="M704,200 C726,204 744,198 756,184" stroke-width="7" stroke-linecap="round"/>
+        </g>
+
+        <!-- rear wheel -->
+        <g transform="translate(170 180)">
+          <circle class="b" r="46"/><circle r="21" fill="url(#p-ht2)"/>
+          <g class="spin"><use href="#spokes"/></g>
+          <circle class="n si" r="54" stroke-width="17"/><circle class="n si" r="41" stroke-width="1.6"/>
+          <path class="n sb" d="M-52,-18 A55,55 0 0 1 -18,-52" stroke-width="2.4" stroke-linecap="round"/>
+          <circle class="i" r="9"/><circle class="r" r="4.6"/>
+        </g>
+        <!-- front wheel -->
+        <g transform="translate(610 180)">
+          <circle class="b" r="46"/><circle r="21" fill="url(#p-ht2)"/>
+          <g class="spin"><use href="#spokes"/></g>
+          <circle class="n si" r="54" stroke-width="17"/><circle class="n si" r="41" stroke-width="1.6"/>
+          <path class="n sb" d="M-52,-18 A55,55 0 0 1 -18,-52" stroke-width="2.4" stroke-linecap="round"/>
+          <circle class="i" r="9"/><circle class="r" r="4.6"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+
+  <svg class="cover__seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <circle class="b" cx="100" cy="100" r="97"/>
+    <circle class="n si" cx="100" cy="100" r="96" stroke-width="3"/>
+    <circle class="n si" cx="100" cy="100" r="63" stroke-width="1.5"/>
+    <path id="seal-arc" class="n" d="M21,100 a79,79 0 1,1 158,0 a79,79 0 1,1 -158,0"/>
+    <text class="seal__ring i"><textPath href="#seal-arc" textLength="484">Official programme · Official programme ·</textPath></text>
+    <text class="seal__price i" x="100" y="80" text-anchor="middle">Price</text>
+    <text class="seal__script r" x="100" y="111" text-anchor="middle">One</text>
+    <text class="seal__script r" x="100" y="139" text-anchor="middle" style="font-size:25px">Invitation</text>
+  </svg>
+</section>
+
+<!-- ============ PAGE TWO: THE MEETING ============ -->
+<section class="page page--ruled" id="meeting" aria-labelledby="meeting-title">
+  <div class="sheet">
+    <div class="meeting__top">
+      <h2 class="bill" id="meeting-title">A race meeting for inference.</h2>
+      <svg class="passed" viewBox="0 0 280 190" aria-hidden="true" focusable="false">
+        <ellipse class="n sr" cx="140" cy="95" rx="134" ry="89" stroke-width="5"/>
+        <ellipse class="n sr" cx="140" cy="95" rx="124" ry="79" stroke-width="1.6"/>
+        <path id="passed-top" class="n" d="M38,95 A102,62 0 0 1 242,95"/>
+        <path id="passed-foot" class="n" d="M30,98 A110,72 0 0 0 250,98"/>
+        <text class="passed__ring r"><textPath href="#passed-top" startOffset="50%" text-anchor="middle">Scrutineer’s office</textPath></text>
+        <text class="passed__word r" x="140" y="113" text-anchor="middle">Passed</text>
+        <text class="passed__ring r"><textPath href="#passed-foot" startOffset="50%" text-anchor="middle">27 Apr 2027</textPath></text>
+      </svg>
+
+      <div class="meeting__foreword">
+        <p>For two days in April the Palace of Fine Arts becomes a paddock. The machines are NVIDIA clusters. The drivers are the people who build on them. The stopwatch reads in tokens per second.</p>
+        <p>Come for the record attempt. Stay for the talk in the pits, where the people who serve the world’s models compare notes on going faster without dropping anything on the way.</p>
+      </div>
+
+      <div class="definition">
+        <dfn>goodput</dfn> <i>n.</i>
+        <p>The part of throughput that arrives whole, and in time to be useful. In this paddock: the tokens somebody was actually waiting for. The rest is wheelspin.</p>
+      </div>
+
+      <div class="particulars">
+        <h3>Particulars of the meeting</h3>
+        <dl class="card">
+          <div class="card__row"><dt>Dates</dt><span class="card__dots"></span><dd>Tue. 27 &amp; Wed. 28 April 2027</dd></div>
+          <div class="card__row"><dt>Circuit</dt><span class="card__dots"></span><dd>Palace of Fine Arts, San Francisco</dd></div>
+          <div class="card__row"><dt>Main event</dt><span class="card__dots"></span><dd>World record attempt</dd></div>
+          <div class="card__row"><dt>Machine</dt><span class="card__dots"></span><dd>NVIDIA Vera Rubin</dd></div>
+          <div class="card__row"><dt>Admission</dt><span class="card__dots"></span><dd>By invitation</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="oxford" role="presentation"></div>
+
+    <h2 class="events__title">Order of events</h2>
+    <ol class="events">
+      <li>
+        <a class="event" href="#record">
+          <span class="event__name" data-fit><span>The Record Attempt</span></span>
+          <span class="event__who"><span>Nebius Token Factory against the clock, on NVIDIA Vera Rubin</span><span class="card__dots"></span><span class="event__go">Page three <svg aria-hidden="true"><use href="#arrow"/></svg></span></span>
+        </a>
+      </li>
+      <li>
+        <a class="event" href="#drivers">
+          <span class="event__name" data-fit><span>Volozh · Chernin · LeCun · Teknium</span></span>
+          <span class="event__who"><span>The drivers, on the rostrum</span><span class="card__dots"></span><span class="event__go">Page four <svg aria-hidden="true"><use href="#arrow"/></svg></span></span>
+        </a>
+      </li>
+      <li>
+        <a class="event" href="#frontiers">
+          <span class="event__name" data-fit><span>New Frontiers of Performance</span></span>
+          <span class="event__who"><span>Cursor · Higgsfield · Cognition, on Nebius AI Cloud</span><span class="card__dots"></span><span class="event__go">Page five <svg aria-hidden="true"><use href="#arrow"/></svg></span></span>
+        </a>
+      </li>
+    </ol>
+    <p class="events__note">Times will be posted at the paddock gate. The order of running is at the discretion of the Clerk of the Course.</p>
+
+    <p class="folio">Page two</p>
+  </div>
+</section>
+
+<!-- ============ PAGE THREE: THE RECORD ATTEMPT ============ -->
+<section class="page page--green" id="record" aria-labelledby="record-title">
+  <div class="sheet record">
+    <h2 class="bill" id="record-title">The Record Attempt</h2>
+
+    <figure class="record__dial">
+      <svg class="dial" viewBox="0 0 640 640" role="img" aria-labelledby="dial-title">
+        <title id="dial-title">A chronometric dial reading tokens per second, scaled from nought to twelve thousand.</title>
+        <circle class="b" cx="320" cy="320" r="308"/>
+        <circle cx="320" cy="320" r="308" fill="url(#p-ht1)"/>
+        <circle class="b" cx="320" cy="320" r="290"/>
+        <circle class="i" cx="320" cy="320" r="280"/>
+        <circle class="n sb" cx="320" cy="320" r="270" stroke-width="1.5"/>
+        <!-- scale: 270 degrees, nought to twelve -->
+        <path class="n sb" d="M148.900,491.100 A242,242 0 1 1 491.100,491.100" pathLength="1200" stroke-width="26" stroke-dasharray="5 95" stroke-dashoffset="2.5"/>
+        <path class="n sb" d="M144.600,495.400 A248,248 0 1 1 495.400,495.400" pathLength="1200" stroke-width="14" stroke-dasharray="2.6 47.4" stroke-dashoffset="1.3"/>
+        <path class="n sb" d="M142.200,497.800 A251.500,251.500 0 1 1 497.800,497.800" pathLength="1200" stroke-width="7" stroke-dasharray="1.2 8.8" stroke-dashoffset=".6"/>
+        <path class="n sb" d="M139,501 L158.100,481.900 M501,501 L481.900,481.900" stroke-width="5.5"/>
+        <path class="n sr" d="M584,320 A264,264 0 0 1 506.700,506.700" stroke-width="9"/>
+        <g text-anchor="middle">
+          <text class="dial__num" x="181.400" y="458.600" dy=".35em">0</text>
+          <text class="dial__num" x="138.900" y="395" dy=".35em">1</text>
+          <text class="dial__num" x="124" y="320" dy=".35em">2</text>
+          <text class="dial__num" x="138.900" y="245" dy=".35em">3</text>
+          <text class="dial__num" x="181.400" y="181.400" dy=".35em">4</text>
+          <text class="dial__num" x="245" y="138.900" dy=".35em">5</text>
+          <text class="dial__num" x="320" y="124" dy=".35em">6</text>
+          <text class="dial__num" x="395" y="138.900" dy=".35em">7</text>
+          <text class="dial__num" x="458.600" y="181.400" dy=".35em">8</text>
+          <text class="dial__num" x="501.100" y="245" dy=".35em">9</text>
+          <text class="dial__num" x="512" y="320" dy=".35em">10</text>
+          <text class="dial__num" x="497" y="395" dy=".35em">11</text>
+          <text class="dial__num" x="456" y="456" dy=".35em">12</text>
+          <text class="dial__maker" x="320" y="232">Goodput</text>
+          <text class="dial__label" x="320" y="262">Tokens per second</text>
+          <text class="dial__fine" x="320" y="282">× 1,000 · Chronometric</text>
+          <!-- odometer -->
+          <rect class="b" x="215" y="398" width="210" height="46"/>
+          <path class="n si" d="M245,398v46 M275,398v46 M305,398v46 M335,398v46 M365,398v46 M395,398v46" stroke-width="1.6"/>
+          <g class="dial__digits">
+            <text class="dial__digit" x="230" y="432">0</text><text class="dial__digit" x="260" y="432">0</text>
+            <text class="dial__digit" x="290" y="432">0</text><text class="dial__digit" x="320" y="432">0</text>
+            <text class="dial__digit" x="350" y="432">0</text><text class="dial__digit" x="380" y="432">0</text>
+            <text class="dial__digit" x="410" y="432">0</text>
+          </g>
+          <text class="dial__fine" x="320" y="466">Your forecast · T.P.S.</text>
+        </g>
+        <g class="dial__stamp">
+          <rect class="i" x="196" y="486" width="248" height="46"/>
+          <rect class="n sy" x="196" y="486" width="248" height="46" stroke-width="3"/>
+          <text x="320" y="518" text-anchor="middle">Off the clock</text>
+        </g>
+        <g class="dial__needle">
+          <path class="r" d="M314,320 L318.400,98 L320,82 L321.600,98 L326,320 Z"/>
+          <path class="r" d="M312,320 L328,320 L325,376 L315,376 Z"/>
+        </g>
+        <circle class="b" cx="320" cy="320" r="24"/>
+        <circle class="n si" cx="320" cy="320" r="24" stroke-width="2"/>
+        <circle class="i" cx="320" cy="320" r="7"/>
+      </svg>
+      <figcaption>Dial calibrated for forecasts only. The record is whatever the timekeepers certify on the day.</figcaption>
+    </figure>
+
+    <div class="record__copy">
+      <p class="record__lede">Nebius Token Factory against the clock.</p>
+      <p>The main event. Nebius Token Factory will attempt the world record for inference speed on NVIDIA Vera Rubin, in front of the grandstand, with the timekeepers watching. One machine, one stopwatch, and a figure that either stands or does not.</p>
+
+      <dl class="card">
+        <div class="card__row"><dt>Entrant</dt><span class="card__dots"></span><dd>Nebius Token Factory</dd></div>
+        <div class="card__row"><dt>Machine</dt><span class="card__dots"></span><dd>NVIDIA Vera Rubin</dd></div>
+        <div class="card__row"><dt>Measured in</dt><span class="card__dots"></span><dd>Tokens per second (t.p.s.)</dd></div>
+        <div class="card__row"><dt>Result</dt><span class="card__dots"></span><dd><span class="record__blank"></span> t.p.s. <span class="visually-hidden">Left blank until the day.</span></dd></div>
+      </dl>
+
+      <form class="forecast" id="forecast" novalidate>
+        <h3 id="forecast-title">Pencil in your forecast</h3>
+        <p class="forecast__hint" id="forecast-hint">Spectators are invited to guess the figure. It stays in your own programme: nothing is sent anywhere.</p>
+        <div class="forecast__row">
+          <div class="forecast__field">
+            <label for="forecast-input">Tokens per second</label>
+            <input class="forecast__input" id="forecast-input" name="forecast" type="text" inputmode="numeric" autocomplete="off" placeholder="say, 4,200" aria-describedby="forecast-hint forecast-out">
+          </div>
+          <button class="btn btn--on-green" type="submit">Set the needle</button>
+        </div>
+        <p class="forecast__out" id="forecast-out" role="status"></p>
+        <noscript><p class="forecast__out">The needle needs JavaScript to move. The record attempt does not.</p></noscript>
+      </form>
+    </div>
+
+    <p class="folio" style="grid-column:1/-1">Page three</p>
+  </div>
+</section>
+
+<!-- ============ PAGE FOUR: THE DRIVERS ============ -->
+<section class="page" id="drivers" aria-labelledby="drivers-title">
+  <div class="sheet">
+    <div class="drivers__head">
+      <h2 class="bill" id="drivers-title">The Drivers</h2>
+      <p>Four names are on the entry list. Their subjects will be announced from the rostrum.</p>
+    </div>
+
+    <div class="grid">
+      <article class="slot">
+          <figure class="slot__plate"><img src="assets/img/driver-volozh.svg" width="320" height="380" alt="Arkady Volozh, drawn as a racing driver in a 1950s hard helmet with goggles raised." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>B300</span></figure>
+          <div class="slot__entry">
+            <h3>Arkady Volozh</h3>
+            <dl class="card">
+              <div class="card__row"><dt>Entrant</dt><span class="card__dots"></span><dd>Nebius</dd></div>
+              <div class="card__row"><dt>Machine</dt><span class="card__dots"></span><dd>Blackwell B300</dd></div>
+            </dl>
+          </div>
+      </article>
+
+      <article class="slot">
+          <figure class="slot__plate"><img src="assets/img/driver-chernin.svg" width="320" height="380" alt="Roman Chernin, drawn as a racing driver in a 1930s leather helmet, white overalls and a spotted scarf." loading="lazy"><span class="roundel roundel--long"><span class="visually-hidden">Racing number </span>GB300</span></figure>
+          <div class="slot__entry">
+            <h3>Roman Chernin</h3>
+            <dl class="card">
+              <div class="card__row"><dt>Entrant</dt><span class="card__dots"></span><dd>Nebius</dd></div>
+              <div class="card__row"><dt>Machine</dt><span class="card__dots"></span><dd>Grace Blackwell GB300</dd></div>
+            </dl>
+          </div>
+      </article>
+
+      <article class="slot">
+          <figure class="slot__plate"><img src="assets/img/driver-lecun.svg" width="320" height="380" alt="Yann LeCun, drawn as a racing driver in a reversed tweed cap, round spectacles and a spotted bow tie." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>H200</span></figure>
+          <div class="slot__entry">
+            <h3>Yann LeCun</h3>
+            <dl class="card">
+              <div class="card__row"><dt>Entrant</dt><span class="card__dots"></span><dd>Y. LeCun</dd></div>
+              <div class="card__row"><dt>Machine</dt><span class="card__dots"></span><dd>Hopper H200</dd></div>
+            </dl>
+          </div>
+      </article>
+
+      <article class="slot">
+          <figure class="slot__plate"><img src="assets/img/driver-teknium.svg" width="320" height="380" alt="Teknium, drawn as a masked racing driver: goggles down, scarf pulled up over the face." loading="lazy"><span class="roundel"><span class="visually-hidden">Racing number </span>H100</span></figure>
+          <div class="slot__entry">
+            <h3>Teknium</h3>
+            <dl class="card">
+              <div class="card__row"><dt>Entrant</dt><span class="card__dots"></span><dd>Nous Research</dd></div>
+              <div class="card__row"><dt>Machine</dt><span class="card__dots"></span><dd>Hopper H100</dd></div>
+            </dl>
+            <p class="slot__note">Enters under a nom de course, as some of the best always have.</p>
+          </div>
+      </article>
+    </div>
+
+    <p class="drivers__foot">Racing numbers are NVIDIA cluster names. The machines are a figure of speech; the drivers are quite real.</p>
+    <p class="folio">Page four</p>
+  </div>
+</section>
+
+<!-- ============ PAGE FIVE: THE INSERT ============ -->
+<section class="page page--salmon" id="frontiers" aria-labelledby="frontiers-title">
+  <div class="sheet insert">
+    <h2 class="bill" id="frontiers-title">New Frontiers of Performance</h2>
+    <p class="insert__lede">Three Nebius AI Cloud customers take the line to show what running at the limit looks like in their own trade.</p>
+    <ul class="entrants">
+      <li><span class="entrant__name" data-fit data-fit-max="150"><span>Cursor</span></span><span class="entrant__trade">The AI code editor</span></li>
+      <li><span class="entrant__name" data-fit data-fit-max="150"><span>Higgsfield</span></span><span class="entrant__trade">Generative video</span></li>
+      <li><span class="entrant__name" data-fit data-fit-max="150"><span>Cognition</span></span><span class="entrant__trade">Makers of Devin</span></li>
+    </ul>
+    <p class="insert__foot">All three run on Nebius AI Cloud.</p>
+    <p class="folio">Page five</p>
+  </div>
+</section>
+
+<!-- ============ PAGE SIX: THE PADDOCK ============ -->
+<section class="page" id="paddock" aria-labelledby="paddock-title">
+  <div class="sheet paddock">
+    <h2 class="bill" id="paddock-title">The Paddock</h2>
+
+    <figure class="paddock__plan">
+      <svg viewBox="0 0 600 580" role="img" aria-labelledby="plan-title">
+        <title id="plan-title">Plan of the Palace of Fine Arts: the rotunda on the west shore of the lagoon, the colonnade curving behind it and the exhibition hall behind that. Not to scale.</title>
+        <text class="plan__title" x="26" y="58">Plan of the Paddock</text>
+        <path class="n si" d="M26,72 L574,72" stroke-width="1.5"/>
+        <g transform="translate(0 62)">
+          <!-- exhibition hall -->
+          <path class="g" d="M254.300,43.400 A250,250 0 0 0 254.300,496.600 L277.200,447.600 A196,196 0 0 1 277.200,92.400 Z"/>
+          <path d="M254.300,43.400 A250,250 0 0 0 254.300,496.600 L277.200,447.600 A196,196 0 0 1 277.200,92.400 Z" fill="url(#p-bdots)" opacity=".28"/>
+          <!-- colonnade -->
+          <path class="n si" d="M274,147.100 A150,150 0 0 0 274,392.900" stroke-width="10" stroke-dasharray="5 7"/>
+          <path class="n si" d="M266,138 A162,162 0 0 0 266,402" stroke-width="1.2"/>
+          <!-- lagoon -->
+          <path d="M352,150 C400,110 500,120 540,180 C575,235 560,330 520,380 C480,430 400,430 360,395 C335,372 345,330 338,300 C332,270 335,235 340,210 C343,185 335,165 352,150 Z" fill="url(#p-water)" stroke="#0F3D2C" stroke-width="2"/>
+          <rect class="b" x="382" y="254" width="136" height="34"/>
+          <!-- rotunda -->
+          <path class="r" d="M327,254.700 L305.300,233 L274.700,233 L253,254.700 L253,285.300 L274.700,307 L305.300,307 L327,285.300 Z"/>
+          <path class="n si" d="M327,254.700 L305.300,233 L274.700,233 L253,254.700 L253,285.300 L274.700,307 L305.300,307 L327,285.300 Z" stroke-width="2"/>
+          <circle class="b si" cx="290" cy="270" r="20" stroke-width="1.6"/>
+          <!-- trees -->
+          <g class="g">
+            <circle cx="578" cy="150" r="12"/><circle cx="590" cy="228" r="10"/><circle cx="584" cy="318" r="13"/>
+            <circle cx="566" cy="390" r="11"/><circle cx="452" cy="462" r="12"/><circle cx="388" cy="452" r="10"/>
+            <circle cx="322" cy="440" r="11"/><circle cx="322" cy="112" r="11"/><circle cx="402" cy="84" r="12"/><circle cx="492" cy="88" r="10"/>
+          </g>
+          <!-- compass -->
+          <g transform="translate(540 458)">
+            <circle class="b si" r="30" stroke-width="1.6"/>
+            <path class="i" d="M0,-40 L8,0 L0,-6 L-8,0 Z"/><path class="n si" d="M0,6 L0,24 M-24,0 L24,0" stroke-width="1.4"/>
+          </g>
+          <!-- lettering -->
+          <text class="plan__caps plan__caps--on" transform="translate(143 270) rotate(-90)" text-anchor="middle">Exhibition hall</text>
+          <text class="plan__caps" x="332" y="220" text-anchor="end">Rotunda</text>
+          <text class="plan__caps" transform="translate(190 270) rotate(-90)" text-anchor="middle">Colonnade</text>
+          <text class="plan__it" x="450" y="278" text-anchor="middle">The Lagoon</text>
+          <text class="plan__it plan__it--ink" x="30" y="500">To the Presidio</text>
+          <text class="plan__it plan__it--ink" x="562" y="46" text-anchor="end">To the Bay</text>
+          <path class="n si" d="M576,44 L576,22 M570,29 L576,21 L582,29" stroke-width="1.6"/>
+        </g>
+      </svg>
+      <figcaption>Plan not to scale. Follow the bunting.</figcaption>
+    </figure>
+
+    <div class="paddock__side">
+      <address class="paddock__address">
+        <strong>Palace of Fine Arts</strong>
+        3601 Lyon Street, San Francisco, California<br>
+        Tuesday 27 &amp; Wednesday 28 April 2027
+      </address>
+
+      <h3 class="block-title">A paddock glossary</h3>
+      <dl class="glossary">
+        <div><dt>Standing start</dt><dd>Time to first token. The clock runs from the flag, not from when the engine is warm.</dd></div>
+        <div><dt>Flying lap</dt><dd>Sustained throughput, taken once everything is up to temperature.</dd></div>
+        <div><dt>Scrutineering</dt><dd>Evals. Nothing takes the line until it has been looked over.</dd></div>
+        <div><dt>Slipstream</dt><dd>Streaming. Tokens tucked in nose to tail.</dd></div>
+        <div><dt>Pit stop</dt><dd>A checkpoint. The quick ones win races.</dd></div>
+      </dl>
+    </div>
+
+    <aside class="notice" aria-labelledby="notice-title">
+      <h3 id="notice-title">Benchmarking<br>is dangerous</h3>
+      <p>Warning to the public. All persons attend this meeting at their own risk of revising what they thought was fast.</p>
+    </aside>
+
+    <p class="folio" style="grid-column:1/-1;margin-top:0">Page six</p>
+  </div>
+</section>
+
+<!-- ============ THE ENTRY FORM ============ -->
+<section class="coupon" id="entry" aria-labelledby="entry-title">
+  <div class="coupon__perf" aria-hidden="true">
+    <svg viewBox="0 0 34 24"><circle cx="6" cy="6" r="4.4" fill="none" stroke="#1B1915" stroke-width="2"/><circle cx="6" cy="18" r="4.4" fill="none" stroke="#1B1915" stroke-width="2"/><path d="M9.600,8.400 L33,20 M9.600,15.600 L33,4" stroke="#1B1915" stroke-width="2" fill="none"/></svg>
+    <span>Detach here</span>
+  </div>
+  <div class="sheet coupon__sheet">
+    <div class="coupon__title">
+      <h2 class="bill" id="entry-title">Entry Form</h2>
+      <span class="coupon__script" aria-hidden="true">for the paddock</span>
+    </div>
+    <div class="coupon__body">
+      <p>Admission to the paddock is by invitation. Send in your entry and the Secretary of the Meeting will reply.</p>
+      <div class="coupon__actions">
+        <a class="btn" href="#entry-closed" data-invite="final">Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="coupon__date-link" href="assets/goodput-festival-of-code.ics" download>Save the date</a>
+      </div>
+      <div class="coupon__closed" id="entry-closed" role="status" tabindex="-1">
+        <span class="stamp">Entries open shortly</span>
+        <p>The entry office is not yet receiving forms. Save the date, and call again.</p>
+      </div>
+    </div>
+    <p class="coupon__particulars caps"><span>Goodput Festival of Code</span><span>Tuesday 27 &amp; Wednesday 28 April 2027</span><span>Palace of Fine Arts, San Francisco</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__sheet">
+    <div>
+      <p><strong>Colophon</strong></p>
+      <p>Set in five faces and printed in four inks, in the manner of the old race-day programmes. Not affiliated with the Goodwood Festival of Speed or the Goodwood Estate, whose summer meeting is admired from a distance.</p>
+      <p>NVIDIA and Vera Rubin are trademarks of NVIDIA Corporation. All other names belong to their owners. The portraits are illustrations in period dress and are not likenesses.</p>
+    </div>
+    <a class="colophon__top" href="#top">Back to the cover</a>
+  </div>
+</footer>
+
+</body>
+</html>

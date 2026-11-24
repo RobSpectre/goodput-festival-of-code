@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/index.html"
+        ],
+        "createdAt": "2026-11-24T01:26:24.802Z",
+        "reason": "agent decided: the detector reads var() and clamp() padding as zero; rendered insets are 20-136px, checked in .impeccable/review captures; the cover plate and plan are full-bleed by design"
+      }
+    ]
+  }
+}

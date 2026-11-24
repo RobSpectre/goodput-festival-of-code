@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Goodput Festival of Code//Official Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:goodput-festival-of-code-2027@goodput-festival-of-code
+DTSTAMP:20261123T000000Z
+DTSTART;VALUE=DATE:20270427
+DTEND;VALUE=DATE:20270429
+SUMMARY:Goodput Festival of Code
+LOCATION:Palace of Fine Arts\, 3601 Lyon Street\, San Francisco\, CA 94123
+DESCRIPTION:Two days of inference at full throttle\, with a world record attempt for inference speed on NVIDIA Vera Rubin.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
