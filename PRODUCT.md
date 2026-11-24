@@ -28,8 +28,8 @@ A software and AI-infrastructure event staged as a motor-racing festival. The na
 ## Operating Context
 
 - The visitor arrives from a link, an invitation or word of mouth, usually on a laptop, often on a phone.
-- The page is a single landing page; there are no other routes yet.
-- The primary action is "Request an invitation". The destination URL does not exist yet: it is one constant (`INVITE_URL` in `docs/assets/js/main.js`) that the user will set to the real form. Until then the page says entries open shortly and offers a save-the-date calendar file.
+- One landing page, set three ways. The same content exists as three visual treatments, each a complete page, switchable from a "Treatment" dropdown in every header: the Official Programme at `/` (the default), the Timekeepers' Tower at `/tower/` and the Hand-Inked Lap Chart at `/lap-chart/`. There are no other routes.
+- The primary action is "Request an invitation". The destination URL does not exist yet: it is one setting (`inviteUrl` in `docs/assets/js/config.js`, shared by all three treatments) that the user will set to the real form. Until then each page says entries open shortly and offers a save-the-date calendar file.
 
 ## Capabilities and Constraints
 

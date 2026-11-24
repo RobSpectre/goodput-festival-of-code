@@ -14,6 +14,8 @@
 <link rel="preload" href="assets/fonts/stint-ultra-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/hammersmith-one-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/programme.css">
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/treatments.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </head>
 <body>
@@ -46,7 +48,21 @@
 </svg>
 
 <header class="masthead">
-  <a class="masthead__name" href="#top"><span>Goodput<span class="masthead__long"> Festival of Code</span></span> <span class="masthead__sub">Official Programme</span></a>
+  <div class="masthead__id">
+    <a class="masthead__name" href="#top">Goodput<span class="masthead__long"> Festival of Code</span></a>
+    <details class="treatments" data-treatments>
+      <summary>
+        <span class="treatments__label">Treatment</span>
+        <span class="treatments__current">Official Programme</span>
+        <svg class="treatments__chev" viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1.500l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </summary>
+      <ul class="treatments__menu">
+        <li><a href="./" aria-current="page"><strong>The Official Programme</strong><span>A letterpress race-day programme</span></a></li>
+        <li><a href="tower/"><strong>The Timekeepers’ Tower</strong><span>Painted scoreboards and number tiles</span></a></li>
+        <li><a href="lap-chart/"><strong>The Hand-Inked Lap Chart</strong><span>The meeting drawn as charts</span></a></li>
+      </ul>
+    </details>
+  </div>
   <nav aria-label="Programme contents">
     <ul>
       <li><a href="#record">Record attempt</a></li>
@@ -406,7 +422,7 @@
         <div class="forecast__row">
           <div class="forecast__field">
             <label for="forecast-input">Tokens per second</label>
-            <input class="forecast__input" id="forecast-input" name="forecast" type="text" inputmode="numeric" autocomplete="off" placeholder="say, 4,200" aria-describedby="forecast-hint forecast-out">
+            <input class="forecast__input" id="forecast-input" name="forecast" type="text" inputmode="numeric" autocomplete="off" placeholder="a whole number" aria-describedby="forecast-hint forecast-out">
           </div>
           <button class="btn btn--on-green" type="submit">Set the needle</button>
         </div>

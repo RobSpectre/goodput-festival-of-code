@@ -11,6 +11,78 @@
         ],
         "createdAt": "2026-11-24T01:26:24.802Z",
         "reason": "agent decided: the detector reads var() and clamp() padding as zero; rendered insets are 20-136px, checked in .impeccable/review captures; the cover plate and plan are full-bleed by design"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "docs/tower/**"
+        ],
+        "createdAt": "2026-11-24T02:20:44.969Z",
+        "reason": "agent decided: an alternate treatment with its own visual world; DESIGN.md describes the Official Programme treatment only"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "docs/tower/**"
+        ],
+        "createdAt": "2026-11-24T02:20:44.996Z",
+        "reason": "agent decided: an alternate treatment with its own visual world; DESIGN.md describes the Official Programme treatment only"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "docs/lap-chart/**"
+        ],
+        "createdAt": "2026-11-24T02:20:45.021Z",
+        "reason": "agent decided: an alternate treatment with its own visual world; DESIGN.md describes the Official Programme treatment only"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "docs/lap-chart/**"
+        ],
+        "createdAt": "2026-11-24T02:20:45.047Z",
+        "reason": "agent decided: an alternate treatment with its own visual world; DESIGN.md describes the Official Programme treatment only"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/tower/index.html"
+        ],
+        "createdAt": "2026-11-24T02:41:35.225Z",
+        "reason": "agent decided: measured in the browser at 1440 and 375 wide: computed padding is .board 12-48px, .list__row 21-24px, .finger 20-52px, .bigpit 22-86px; the detector reads calc(var(--m) * n) and clamp() padding as zero. .slip__field is a text input written on a ruled line, the form-field convention"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "docs/tower/**"
+        ],
+        "createdAt": "2026-11-24T02:41:35.246Z",
+        "reason": "agent decided: an alternate treatment with its own typefaces; DESIGN.md describes the Official Programme treatment only"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "docs/lap-chart/**"
+        ],
+        "createdAt": "2026-11-24T02:41:35.268Z",
+        "reason": "agent decided: an alternate treatment with its own typefaces; DESIGN.md describes the Official Programme treatment only"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/lap-chart/index.html"
+        ],
+        "createdAt": "2026-11-24T02:48:30.208Z",
+        "reason": "agent decided: measured in the browser: .plate computed padding is 20/63/23/63px at 1440 wide (the detector reads var() and clamp() padding as zero); .square__field holds one text, the racing number, inset 14px/10px by absolute position, and the portrait stands on the foot of its square by design"
       }
     ]
   }

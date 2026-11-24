@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goodput Festival of Code · The Timekeepers’ Tower · 27 &amp; 28 April 2027, San Francisco</title>
+<meta name="description" content="Two days of inference at full throttle at the Palace of Fine Arts, San Francisco, 27 and 28 April 2027, scored from the timekeepers’ tower. Main event: a world record attempt for inference speed on NVIDIA Vera Rubin.">
+<meta name="theme-color" content="#151412">
+<link rel="canonical" href="https://robspectre.github.io/goodput-festival-of-code/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bungee-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/big-shoulders-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="tower.css">
+<script src="../assets/js/config.js" defer></script>
+<script src="../assets/js/treatments.js" defer></script>
+<script src="tower.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#sheet">Skip to the timekeepers’ sheet</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="arrow" viewBox="0 0 34 16"><path d="M0 8h28M21 1.500l8 6.500-8 6.500" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
+    <pattern id="t-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-52)"><rect width="6" height="1.600" fill="#151412"/></pattern>
+    <!-- a bare hook: screw head and J -->
+    <g id="hook"><circle cx="6" cy="5" r="3.400" fill="currentColor"/><path d="M6 8v6.500a3.600 3.600 0 0 0 7.200 0" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round"/></g>
+    <!-- the scorer on his ladder, seen from behind, hanging a tile -->
+    <g id="scorer-art">
+      <path d="M49,330 L57,8 L65,8 L57,330 Z M103,330 L95,8 L103,8 L111,330 Z" fill="#F3E9CF" stroke="#151412" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M59,40h40v6h-40z M58,76h42v6h-42z M57,112h44v6h-44z M56,148h46v6h-46z M55,184h48v6h-48z M54,220h50v6h-50z M53,256h52v6h-52z M52,292h54v6h-54z" fill="#F3E9CF" stroke="#151412" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M66,246 L68,180 L80,180 L81,214 L82,180 L94,180 L96,246 L84,246 L81,222 L78,246 Z" fill="#151412"/>
+      <path d="M62,246h20v9h-22z M82,246h20l2,9h-22z" fill="#151412"/>
+      <path d="M62,108 C66,100 96,100 100,108 L104,186 L58,186 Z" fill="#F3E9CF" stroke="#151412" stroke-width="2.200" stroke-linejoin="round"/>
+      <path d="M82,104 C92,103 98,104 100,108 L104,186 L82,186 Z" fill="url(#t-hatch)"/>
+      <path d="M59,150 L103,150" fill="none" stroke="#151412" stroke-width="3"/>
+      <path d="M81,152 L81,186" fill="none" stroke="#151412" stroke-width="1.600"/>
+      <path d="M66,112 L34,74 L20,48" fill="none" stroke="#151412" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M66,112 L34,74 L20,48" fill="none" stroke="#F3E9CF" stroke-width="10.500" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="18" cy="44" r="7.500" fill="#F3E9CF" stroke="#151412" stroke-width="2"/>
+      <path d="M97,112 L108,92 L101,72" fill="none" stroke="#151412" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M97,112 L108,92 L101,72" fill="none" stroke="#F3E9CF" stroke-width="10.500" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="100" cy="68" r="7" fill="#F3E9CF" stroke="#151412" stroke-width="2"/>
+      <path d="M74,100h14v10h-14z" fill="#F3E9CF" stroke="#151412" stroke-width="2"/>
+      <circle cx="81" cy="86" r="14" fill="#F3E9CF" stroke="#151412" stroke-width="2.200"/>
+      <path d="M66,86 C66,70 96,70 96,86 C92,82 70,82 66,86 Z" fill="#151412"/>
+      <path d="M66,85 C60,84 56,86 53,89 L67,90 Z" fill="#151412"/>
+      <path d="M70,96 C76,101 86,101 92,96" fill="none" stroke="#151412" stroke-width="2"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="fascia">
+  <a class="fascia__name" href="#top"><span class="fascia__goodput">Goodput</span> <span class="fascia__sub">Festival of Code</span></a>
+
+  <details class="treatments" data-treatments>
+    <summary>
+      <span class="treatments__label">Treatment</span>
+      <span class="treatments__current">Timekeepers’ Tower</span>
+      <svg class="treatments__chev" viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1.500l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </summary>
+    <ul class="treatments__menu">
+      <li><a href="../"><strong>The Official Programme</strong><span>A letterpress race-day programme</span></a></li>
+      <li><a href="../tower/" aria-current="page"><strong>The Timekeepers’ Tower</strong><span>Painted scoreboards and number tiles</span></a></li>
+      <li><a href="../lap-chart/"><strong>The Hand-Inked Lap Chart</strong><span>The meeting drawn as charts</span></a></li>
+    </ul>
+  </details>
+
+  <nav class="fascia__nav" aria-label="Boards on the tower">
+    <ul>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#drivers">Drivers</a></li>
+      <li><a href="#frontiers">Frontiers</a></li>
+      <li><a href="#paddock">Paddock</a></li>
+    </ul>
+  </nav>
+
+  <a class="pit pit--follow" href="#entries" data-invite>
+    <span class="pit__when">27 &amp; 28 April · Palace of Fine Arts</span>
+    <span class="pit__act">Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></span>
+  </a>
+</header>
+
+<main>
+
+<!-- ============ THE TOWER ============ -->
+<section class="tower" id="top" aria-labelledby="tower-title">
+
+  <div class="board board--name">
+    <h1 id="tower-title"><span class="name__goodput">Goodput</span> <span class="name__sub">Festival <span>of Code</span></span></h1>
+  </div>
+
+  <div class="board board--date">
+    <div class="date">
+      <p class="date__tiles">
+        <span class="visually-hidden">27 and 28 April 2027</span>
+        <span class="tile tile--xl" aria-hidden="true">2</span>
+        <span class="tile tile--xl" aria-hidden="true">7</span>
+        <span class="tile tile--xl tile--amp" aria-hidden="true">&amp;</span>
+        <span class="tile tile--xl" aria-hidden="true">2</span>
+        <span class="tile tile--xl tile--last" aria-hidden="true">8</span>
+      </p>
+      <svg class="scorer" viewBox="0 0 160 298" aria-hidden="true" focusable="false"><use href="#scorer-art"/></svg>
+      <div class="date__side">
+        <p class="date__month" aria-hidden="true">April <span>2027</span></p>
+        <p class="date__where"><span class="where__days">Tuesday &amp; Wednesday</span> <span class="where__place"><span class="nb">Palace of Fine Arts</span> <span class="dot" aria-hidden="true">·</span> <span class="nb">San Francisco</span></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="board board--record">
+    <p class="note note--offer">Two days of inference at full throttle. Main event: Nebius Token Factory goes for the world record for speed on NVIDIA Vera Rubin.</p>
+    <div class="recordrow__time">
+      <p class="col-head">World record · tokens per second</p>
+      <p class="hooks" aria-hidden="true"><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span></p>
+      <p class="posted">Hooks empty. To be posted on the day.</p>
+    </div>
+    <a class="pit pit--hero" href="#entries" data-invite>
+      <span class="pit__act">Request an invitation</span>
+      <svg aria-hidden="true"><use href="#arrow"/></svg>
+    </a>
+  </div>
+
+</section>
+
+<!-- ============ THE TIMEKEEPERS' SHEET ============ -->
+<section class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="paper">
+    <h2 id="sheet-title">A race meeting for inference, scored in tokens per second.</h2>
+    <div class="ruled sheet__cols">
+      <div class="sheet__prose">
+        <p>For two days in April the Palace of Fine Arts is a paddock. The machines are NVIDIA clusters, the drivers are the people who build on them, and every watch in the tower reads in tokens per second.</p>
+        <p>Come for the record attempt. Stay for the talk in the pits, where the people who serve the world’s models compare notes on going faster without dropping anything on the way.</p>
+        <p class="sheet__def"><dfn>Goodput</dfn>, <i>n.</i> The part of throughput that arrives whole, and in time to be useful. On this sheet: the tokens somebody was actually waiting for. The rest is wheelspin.</p>
+      </div>
+      <dl class="form">
+        <div><dt>Meeting</dt><dd>Goodput Festival of Code</dd></div>
+        <div><dt>Dates</dt><dd>Tue. 27 &amp; Wed. 28 April 2027</dd></div>
+        <div><dt>Circuit</dt><dd>Palace of Fine Arts, San Francisco</dd></div>
+        <div><dt>Main event</dt><dd>World record attempt, inference speed</dd></div>
+        <div><dt>Machine</dt><dd>NVIDIA Vera Rubin</dd></div>
+        <div><dt>Admission</dt><dd>By invitation</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE RECORD BOARD ============ -->
+<section class="stage" id="record" aria-labelledby="record-title">
+  <div class="board board--list">
+    <div class="board__head board__head--note">
+      <h2 id="record-title"><span class="nb">World record</span> attempt</h2>
+      <p class="note note--head">One machine, one set of watches, and a figure that either stands or does not.</p>
+    </div>
+
+    <div class="list list--record" role="table" aria-label="The record board">
+      <div class="list__head" role="row">
+        <span role="columnheader">No.</span><span role="columnheader">Entrant</span><span role="columnheader">Machine</span><span role="columnheader">Time, in tokens per second</span>
+      </div>
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><span class="tile tile--no">1</span></span>
+        <span class="cell cell--entrant" role="cell"><span class="entrant">Nebius Token Factory</span></span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">NVIDIA <span class="nb">Vera Rubin</span></span>
+        <span class="cell cell--time" role="cell" data-th="Time, in tokens per second">
+          <span class="hooks" aria-hidden="true"><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span></span>
+          <span class="posted">To be posted on the day</span>
+        </span>
+      </div>
+      <div class="list__row list__row--you" role="row">
+        <span class="cell cell--no" role="cell"><span class="tile tile--no tile--you">You</span></span>
+        <span class="cell cell--entrant" role="cell"><span class="entrant">Your forecast</span></span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">NVIDIA <span class="nb">Vera Rubin</span></span>
+        <span class="cell cell--time" role="cell" data-th="Time, in tokens per second">
+          <span class="hooks hooks--forecast" id="forecast-tiles" aria-hidden="true"><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span></span>
+          <span class="posted" id="forecast-posted">Nothing hung yet</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="record__foot">
+      <form class="slip" id="forecast" novalidate>
+        <h3>Hang your forecast</h3>
+        <p class="slip__hint" id="forecast-hint">Guess the figure and the scorer will hang it under the official row. It stays on your own board: nothing is sent anywhere.</p>
+        <div class="slip__row">
+          <div class="slip__field">
+            <label for="forecast-input">Tokens per second</label>
+            <input id="forecast-input" name="forecast" type="text" inputmode="numeric" autocomplete="off" placeholder="a whole number" aria-describedby="forecast-hint forecast-out">
+          </div>
+          <button class="btn" type="submit">Hang it on the board</button>
+        </div>
+        <p class="slip__out" id="forecast-out" role="status"></p>
+        <button class="slip__down" id="forecast-down" type="button" hidden>Take it down</button>
+        <noscript><p class="slip__out">The scorer needs JavaScript to hang tiles. The record attempt does not.</p></noscript>
+      </form>
+      <svg class="scorer scorer--record" viewBox="0 0 160 298" aria-hidden="true" focusable="false"><use href="#scorer-art"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE DRIVERS ============ -->
+<section class="stage" id="drivers" aria-labelledby="drivers-title">
+  <div class="board board--list">
+    <div class="board__head">
+      <h2 id="drivers-title">The drivers</h2>
+      <p class="painted painted--l">Four names are on the board. Their subjects will be posted from the rostrum.</p>
+    </div>
+
+    <div class="list list--drivers" role="table" aria-label="The drivers">
+      <div class="list__head" role="row">
+        <span role="columnheader">No.</span><span role="columnheader">Entrant</span><span role="columnheader">Machine</span><span role="columnheader">Time</span>
+      </div>
+
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><span class="tile tile--no">B300</span></span>
+        <span class="cell cell--entrant" role="cell">
+          <img class="plate" src="img/driver-volozh.svg" width="320" height="380" alt="Arkady Volozh, painted as a racing driver in a 1950s hard helmet with goggles raised, in zip-fronted racing overalls." loading="lazy">
+          <span><span role="heading" aria-level="3" class="entrant">Arkady Volozh</span><span class="entrant__of">Nebius</span></span>
+        </span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Blackwell B300</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><span class="tile tile--no tile--long">GB300</span></span>
+        <span class="cell cell--entrant" role="cell">
+          <img class="plate" src="img/driver-chernin.svg" width="320" height="380" alt="Roman Chernin, painted as a racing driver in a 1930s leather helmet, white buttoned racing overalls and a spotted scarf." loading="lazy">
+          <span><span role="heading" aria-level="3" class="entrant">Roman Chernin</span><span class="entrant__of">Nebius</span></span>
+        </span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Grace Blackwell GB300</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><span class="tile tile--no">H200</span></span>
+        <span class="cell cell--entrant" role="cell">
+          <img class="plate" src="img/driver-lecun.svg" width="320" height="380" alt="Yann LeCun, painted as a racing driver in a reversed tweed cap and round spectacles, in white buttoned racing overalls with a spotted bow tie." loading="lazy">
+          <span><span role="heading" aria-level="3" class="entrant">Yann LeCun</span></span>
+        </span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Hopper H200</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><span class="tile tile--no">H100</span></span>
+        <span class="cell cell--entrant" role="cell">
+          <img class="plate" src="img/driver-teknium.svg" width="320" height="380" alt="Teknium, painted as a masked racing driver in black racing leathers: goggles down, scarf pulled up over the face." loading="lazy">
+          <span><span role="heading" aria-level="3" class="entrant">Teknium</span><span class="entrant__of"><span>Nous Research</span> <span>Entered under a nom de course</span></span></span>
+        </span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Hopper H100</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+    </div>
+
+    <p class="painted board__foot">Racing numbers are NVIDIA cluster names. The machines are a figure of speech; the drivers are quite real.</p>
+  </div>
+</section>
+
+<!-- ============ NEW FRONTIERS ============ -->
+<section class="stage" id="frontiers" aria-labelledby="frontiers-title">
+  <div class="board board--list board--black">
+    <div class="board__head board__head--stack">
+      <h2 id="frontiers-title"><span class="nb">New frontiers</span> <span class="nb">of performance</span></h2>
+      <p class="painted painted--l">Three Nebius AI Cloud customers take the line to show what running at the limit looks like in their own trade.</p>
+    </div>
+
+    <div class="list list--frontiers" role="table" aria-label="New frontiers of performance">
+      <div class="list__head" role="row">
+        <span role="columnheader">No.</span><span role="columnheader">Entrant</span><span role="columnheader">Machine</span><span role="columnheader">Time</span>
+      </div>
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="visually-hidden">Number to be drawn</span></span>
+        <span class="cell cell--entrant" role="cell"><span><span role="heading" aria-level="3" class="entrant entrant--big">Cursor</span><span class="entrant__of">The AI code editor</span></span></span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Nebius AI Cloud</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="visually-hidden">Number to be drawn</span></span>
+        <span class="cell cell--entrant" role="cell"><span><span role="heading" aria-level="3" class="entrant entrant--big">Higgsfield</span><span class="entrant__of">Generative video</span></span></span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Nebius AI Cloud</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+      <div class="list__row" role="row">
+        <span class="cell cell--no" role="cell"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="visually-hidden">Number to be drawn</span></span>
+        <span class="cell cell--entrant" role="cell"><span><span role="heading" aria-level="3" class="entrant entrant--big">Cognition</span><span class="entrant__of">Makers of Devin</span></span></span>
+        <span class="cell cell--machine" role="cell" data-th="Machine">Nebius AI Cloud</span>
+        <span class="cell cell--time" role="cell" data-th="Time"><svg class="hookpair" viewBox="0 0 64 22" aria-hidden="true" focusable="false"><use href="#hook" x="6"/><use href="#hook" x="40"/></svg><span class="posted">To be posted</span></span>
+      </div>
+    </div>
+
+    <p class="painted board__foot">Numbers to be drawn. The order of running is at the discretion of the Clerk of the Course.</p>
+  </div>
+</section>
+
+<!-- ============ THE PADDOCK ============ -->
+<section class="stage stage--paddock" id="paddock" aria-labelledby="paddock-title">
+  <div class="finger">
+    <h2 id="paddock-title">To the paddock</h2>
+    <address>
+      <strong>Palace of Fine Arts</strong>
+      <span>3601 Lyon Street, San Francisco, California</span>
+      <span>Tuesday 27 &amp; Wednesday 28 April 2027</span>
+    </address>
+    <svg class="finger__hand" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
+      <!-- the signwriter's pointing hand -->
+      <path d="M8,34 h54 v56 h-54 z" fill="#151412"/>
+      <path d="M12,40h8v44h-8z" fill="#F4C20D"/>
+      <path d="M62,36 C84,30 100,30 116,36 L196,36 C212,36 212,58 196,58 L132,58 C146,60 146,72 132,74 C144,76 142,88 130,88 C138,92 134,102 122,102 L84,102 C74,102 68,96 62,90 Z" fill="#F3E9CF" stroke="#151412" stroke-width="3.500" stroke-linejoin="round"/>
+      <path d="M116,58 L134,58 M112,74 L132,74 M106,88 L130,88 M172,42 C178,42 180,52 172,52" fill="none" stroke="#151412" stroke-width="3" stroke-linecap="round"/>
+      <path d="M62,90 C70,96 76,102 84,102 L122,102 C128,102 132,98 132,94 L84,94 C76,94 68,90 62,82 Z" fill="url(#t-hatch)"/>
+    </svg>
+  </div>
+
+  <div class="paper paper--notes">
+    <h3>Timekeepers’ glossary</h3>
+    <dl class="ruled gloss">
+      <div><dt>Standing start</dt><dd>Time to first token. The watch runs from the flag, not from when the engine is warm.</dd></div>
+      <div><dt>Flying lap</dt><dd>Sustained throughput, taken once everything is up to temperature.</dd></div>
+      <div><dt>Scrutineering</dt><dd>Evals. Nothing takes the line until it has been looked over.</dd></div>
+      <div><dt>Slipstream</dt><dd>Streaming. Tokens tucked in nose to tail.</dd></div>
+      <div><dt>Pit stop</dt><dd>A checkpoint. The quick ones win races.</dd></div>
+    </dl>
+  </div>
+
+  <aside class="warn" aria-labelledby="warn-title">
+    <h3 id="warn-title">Benchmarking is dangerous</h3>
+    <p class="painted painted--l">Warning to the public. All persons attend this meeting at their own risk of revising what they thought was fast.</p>
+  </aside>
+</section>
+
+<!-- ============ ENTRIES ============ -->
+<section class="entries" id="entries" aria-labelledby="entries-title">
+  <div class="bigpit">
+    <div class="entries__closed" id="entry-closed">
+      <h2 id="entries-title">Entries open shortly</h2>
+      <p class="painted painted--l">Admission to the paddock is by invitation, and the entry office is not yet taking names. Save the date, and watch this board.</p>
+      <a class="btn btn--on-yellow" href="../assets/goodput-festival-of-code.ics" download>Save the date <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <div class="entries__open" id="entry-open" hidden>
+      <h2>Request an invitation</h2>
+      <p class="painted painted--l">Admission to the paddock is by invitation. Send in your entry and the Secretary of the Meeting will reply.</p>
+      <p class="entries__actions">
+        <a class="btn btn--on-yellow" href="#entries" data-invite>Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="entries__date" href="../assets/goodput-festival-of-code.ics" download>Save the date</a>
+      </p>
+    </div>
+    <p class="bigpit__line"><span class="nb">Goodput Festival of Code</span> <span class="dot" aria-hidden="true">·</span> <span class="nb">27 &amp; 28 April 2027</span> <span class="dot" aria-hidden="true">·</span> <span class="nb">Palace of Fine Arts, San Francisco</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="base">
+  <div class="base__in">
+    <div class="note note--base">
+      <p><strong>Painted on the tower</strong></p>
+      <p>Boards, tiles and a timekeepers’ sheet, in the manner of the old trackside scoreboards. Not affiliated with the Goodwood Festival of Speed or the Goodwood Estate, whose summer meeting is admired from a distance.</p>
+      <p>NVIDIA and Vera Rubin are trademarks of NVIDIA Corporation. All other names belong to their owners. The portraits are illustrations in period dress and are not likenesses.</p>
+    </div>
+    <a class="base__top" href="#top">Back up the tower</a>
+  </div>
+</footer>
+
+</body>
+</html>

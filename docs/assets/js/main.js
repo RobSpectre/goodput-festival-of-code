@@ -3,16 +3,11 @@
 (() => {
   'use strict';
 
-  /* The one thing to change when the invitation form exists: paste its URL
-     here. Every "Request an invitation" button will then lead to it, and the
-     entry form swaps its "Entries open shortly" stamp for the button. While
-     it is empty, the buttons lead to the entry form at the foot of the page,
-     which says that entries open shortly and offers the calendar file. */
-  const INVITE_URL = '';
+  /* The invitation URL is set once, in config.js, for all three treatments. */
+  const INVITE_URL = (window.GOODPUT && window.GOODPUT.inviteUrl) || '';
 
-  /* ?still parks every animation at its end state, for captures and print. */
-  const still = new URLSearchParams(window.location.search).has('still');
-  if (still) document.documentElement.classList.add('still');
+  /* ?still (handled in treatments.js) parks every animation at its end state. */
+  const still = document.documentElement.classList.contains('still');
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const reduceMotion = { get matches() { return still || motionQuery.matches; } };
 
@@ -164,7 +159,7 @@
     const raw = input.value.replace(/[\s,._]/g, '');
     if (!/^\d+$/.test(raw)) {
       input.setAttribute('aria-invalid', 'true');
-      say('Figures only, please: a whole number of tokens per second, such as 4200.', 'error');
+      say('Figures only, please: a whole number of tokens per second.', 'error');
       input.focus();
       return;
     }

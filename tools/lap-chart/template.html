@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goodput Festival of Code, drawn in charts · 27 &amp; 28 April 2027 · Palace of Fine Arts, San Francisco</title>
+<meta name="description" content="Two days of inference at full throttle at the Palace of Fine Arts, San Francisco, 27 and 28 April 2027, argued in hand-inked charts. Headlining: a world record attempt for inference speed on NVIDIA Vera Rubin.">
+<meta name="theme-color" content="#171512">
+<link rel="canonical" href="https://robspectre.github.io/goodput-festival-of-code/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/londrina-solid-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dekko-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/averia-serif-libre-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="lap-chart.css">
+<script src="../assets/js/config.js" defer></script>
+<script src="../assets/js/treatments.js" defer></script>
+<script src="lap-chart.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#goodput">Skip to the charts</a>
+
+<!-- shared by the charts -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="9" height="2" fill="#171512"/>
+    </pattern>
+    <symbol id="arrow" viewBox="0 0 30 14"><path d="M0 7h26M20 1l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <a class="bar__name" href="#top">Goodput <span class="bar__long">Festival of Code</span></a>
+  <details class="treatments" data-treatments>
+    <summary>
+      <span class="treatments__label">Treatment</span>
+      <span class="treatments__current">Hand-Inked Lap Chart</span>
+      <svg class="treatments__chev" viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1.500l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </summary>
+    <ul class="treatments__menu">
+      <li><a href="../"><strong>The Official Programme</strong><span>A letterpress race-day programme</span></a></li>
+      <li><a href="../tower/"><strong>The Timekeepers’ Tower</strong><span>Painted scoreboards and number tiles</span></a></li>
+      <li><a href="../lap-chart/" aria-current="page"><strong>The Hand-Inked Lap Chart</strong><span>The meeting drawn as charts</span></a></li>
+    </ul>
+  </details>
+  <nav class="bar__nav" aria-label="The charts">
+    <ul>
+      <li><a href="#record">The record</a></li>
+      <li><a href="#drivers">Drivers</a></li>
+      <li><a href="#customers">Customers</a></li>
+      <li><a href="#where">Where &amp; when</a></li>
+    </ul>
+  </nav>
+  <a class="btn bar__cta" href="#invitation" data-invite>Request an invitation</a>
+</header>
+
+<main>
+
+<!-- ============ THE FIRST PLATE ============ -->
+<section class="plate plate--one" id="top" aria-labelledby="title">
+  <h1 id="title"><span>Goodput</span> <span>Festival</span> <span>of Code</span></h1>
+  <div class="one">
+    <div class="one__text">
+      <p class="one__date"><span>27 &amp; 28</span> <span>April 2027</span></p>
+      <p class="one__place hand"><span>Tuesday and Wednesday.</span> <span>Palace of Fine Arts, San Francisco.</span></p>
+      <p class="one__offer">A race meeting for inference, argued in hand-inked charts. Two days at full throttle, headlining a world record attempt for speed on NVIDIA Vera Rubin.</p>
+      <a class="btn" href="#invitation" data-invite>Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <figure class="one__figure">
+        {{HERO_PLATE}}
+    </figure>
+    <div class="one__notes">
+      <figure class="lapchart">
+        {{LAPCHART_FIGURE}}
+      </figure>
+      <div class="one__read">
+        <p class="hand">How to read the sheet</p>
+        <p>The bars were counted. They are drawn to one scale, measured along the middle of the line.</p>
+        <p>The spiral was not. Nobody knows yet how long it is. That is what the two days are for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IS GOODPUT? ============ -->
+<section class="plate plate--gold" id="goodput" aria-labelledby="q-goodput">
+  <div class="sheet">
+    <h2 class="plate__q" id="q-goodput">What is goodput?</h2>
+    <div class="idea">
+      <div class="idea__text">
+        <p class="lede">The part of throughput that arrives whole, and in time to be useful. In this paddock: the tokens somebody was actually waiting for. The rest is wheelspin.</p>
+        <p>For two days in April the Palace of Fine Arts becomes a paddock. The machines are NVIDIA clusters. The drivers are the people who build on them. The stopwatch reads in tokens per second.</p>
+      </div>
+      <figure class="idea__figure">
+        {{GOODPUT_FIGURE}}
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW FAST IS FAST? ============ -->
+<section class="plate plate--ink" id="record" aria-labelledby="q-record">
+  <div class="sheet">
+    <h2 class="plate__q" id="q-record">How fast is fast?</h2>
+    <div class="record">
+      <div class="record__text">
+        <p class="lede">Nobody knows yet. That is the point of an attempt.</p>
+        <p>On the day, Nebius Token Factory will go for the world record for inference speed on NVIDIA Vera Rubin, in front of the grandstand, with the timekeepers watching. The figure either stands or it does not. Until it does, the record’s line stays off this sheet.</p>
+        <dl class="legend">
+          <div><dt>Entrant</dt><dd>Nebius Token Factory</dd></div>
+          <div><dt>Machine</dt><dd>NVIDIA Vera Rubin</dd></div>
+          <div><dt>Measured in</dt><dd>Tokens per second</dd></div>
+          <div><dt>Result</dt><dd>Not yet inked</dd></div>
+        </dl>
+      </div>
+      <div class="record__work">
+      <figure class="forecast" aria-labelledby="fc-cap">
+        <div class="forecast__sheet">
+            {{FORECAST_COIL}}
+            {{FORECAST_ROWS}}
+        </div>
+        <figcaption id="fc-cap">The sheet is ruled for forecasts only: twelve rows, a thousand tokens per second to the row, numbered at the row ends. The ruling is the size of the paper, not a prediction. The coil holds exactly the same length of line. <span id="fc-read">Both are empty until you ink them.</span></figcaption>
+      </figure>
+        <form class="pencil" id="forecast" novalidate>
+          <h3 id="fc-title">Pencil in your forecast</h3>
+          <p class="pencil__hint" id="fc-hint">A guess, in tokens per second. It stays on your own sheet: nothing is sent anywhere.</p>
+          <div class="pencil__entry">
+            <div class="pencil__field">
+              <label for="fc-input">Tokens per second</label>
+              <input id="fc-input" name="forecast" type="text" inputmode="numeric" autocomplete="off" placeholder="a whole number" aria-describedby="fc-hint fc-out">
+            </div>
+            <button class="btn btn--gold" type="submit">Ink it in</button>
+          </div>
+          <p class="pencil__out" id="fc-out" role="status"></p>
+          <div class="pencil__tools" id="fc-tools" hidden>
+            <button class="btn btn--line" type="button" id="fc-toggle">Unroll it</button>
+            <button class="pencil__rub" type="button" id="fc-rub">Rub it out</button>
+          </div>
+          <noscript><p class="pencil__out">Inking needs JavaScript. The record attempt does not.</p></noscript>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO DRIVES? ============ -->
+<section class="plate" id="drivers" aria-labelledby="q-drivers">
+  <div class="sheet">
+    <h2 class="plate__q" id="q-drivers">Who drives?</h2>
+    <p class="plate__sub hand">Four drivers. One square each.</p>
+    <ol class="squares">
+      <li class="square square--gold">
+        <div class="square__field"><span class="square__no"><span class="visually-hidden">Racing number </span>B300</span><img src="img/driver-volozh.svg" width="320" height="372" alt="Arkady Volozh, drawn in pen and ink as a racing driver in a hard helmet with goggles raised, in zip-fronted racing overalls." loading="lazy"></div>
+        <h3>Arkady Volozh</h3>
+        <dl class="legend legend--tight">
+          <div><dt>Entrant</dt><dd>Nebius</dd></div>
+          <div><dt>Machine</dt><dd>Blackwell B300</dd></div>
+        </dl>
+      </li>
+      <li class="square square--emerald">
+        <div class="square__field"><span class="square__no"><span class="visually-hidden">Racing number </span>GB300</span><img src="img/driver-chernin.svg" width="320" height="372" alt="Roman Chernin, drawn in pen and ink as a racing driver in a leather helmet, white overalls and a spotted scarf." loading="lazy"></div>
+        <h3>Roman Chernin</h3>
+        <dl class="legend legend--tight">
+          <div><dt>Entrant</dt><dd>Nebius</dd></div>
+          <div><dt>Machine</dt><dd>Grace Blackwell GB300</dd></div>
+        </dl>
+      </li>
+      <li class="square square--crimson">
+        <div class="square__field"><span class="square__no"><span class="visually-hidden">Racing number </span>H200</span><img src="img/driver-lecun.svg" width="320" height="372" alt="Yann LeCun, drawn in pen and ink as a racing driver in a reversed cap and round spectacles, in racing overalls with a spotted bow tie." loading="lazy"></div>
+        <h3>Yann LeCun</h3>
+        <dl class="legend legend--tight">
+          <div><dt>Entrant</dt><dd>Y. LeCun</dd></div>
+          <div><dt>Machine</dt><dd>Hopper H200</dd></div>
+        </dl>
+      </li>
+      <li class="square square--open">
+        <div class="square__field"><span class="square__no"><span class="visually-hidden">Racing number </span>H100</span><img src="img/driver-teknium.svg" width="320" height="372" alt="Teknium, drawn in pen and ink as a masked racing driver: goggles down, scarf pulled up over the face." loading="lazy"></div>
+        <h3>Teknium</h3>
+        <dl class="legend legend--tight">
+          <div><dt>Entrant</dt><dd>Nous Research</dd></div>
+          <div><dt>Machine</dt><dd>Hopper H100</dd></div>
+        </dl>
+        <p class="square__note">Entered under a nom de course, so the square is left open.</p>
+      </li>
+    </ol>
+    <p class="plate__foot">Racing numbers are NVIDIA cluster names. The machines are a figure of speech; the drivers are quite real. Their subjects will be announced from the rostrum.</p>
+  </div>
+</section>
+
+<!-- ============ WHO ELSE IS ON THE LINE? ============ -->
+<section class="plate plate--emerald" id="customers" aria-labelledby="q-customers">
+  <div class="sheet">
+    <h2 class="plate__q" id="q-customers">Who else is on the line?</h2>
+    <div class="fan">
+      <figure class="fan__figure">
+        {{FAN_FIGURE}}
+      </figure>
+      <div class="fan__text">
+        <p class="lede">Three Nebius AI Cloud customers take the line to show what running at the limit looks like in their own trade.</p>
+        <ul class="fan__list">
+          <li><strong>Cursor</strong><span>The AI code editor</span></li>
+          <li><strong>Higgsfield</strong><span>Generative video</span></li>
+          <li><strong>Cognition</strong><span>Makers of Devin</span></li>
+        </ul>
+        <p class="hand">Drawn equal. No ranking is meant, and none was measured.</p>
+        <p class="fan__foot">All three run on Nebius AI Cloud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHERE, AND WHEN? ============ -->
+<section class="plate" id="where" aria-labelledby="q-where">
+  <div class="sheet">
+    <h2 class="plate__q" id="q-where">Where, and when?</h2>
+    <div class="when">
+      <figure class="when__figure">
+        {{CALENDAR_FIGURE}}
+        <figcaption class="hand">April 2027 has thirty days. Two are inked.</figcaption>
+      </figure>
+      <div class="when__text">
+        <address>
+          <strong>Palace of Fine Arts</strong>
+          3601 Lyon Street, San Francisco, California
+        </address>
+        <dl class="legend">
+          <div><dt>Dates</dt><dd>Tue. 27 &amp; Wed. 28 April 2027</dd></div>
+          <div><dt>Main event</dt><dd>World record attempt</dd></div>
+          <div><dt>Machine</dt><dd>NVIDIA Vera Rubin</dd></div>
+          <div><dt>Admission</dt><dd>By invitation</dd></div>
+        </dl>
+        <p>Times will be posted at the gate. The order of running is at the discretion of the Clerk of the Course.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WILL YOU BE THERE? ============ -->
+<section class="plate plate--crimson" id="invitation" aria-labelledby="q-invitation">
+  <div class="sheet invite">
+    <h2 class="plate__q" id="q-invitation">Will you be there?</h2>
+    <div class="invite__state" id="entry-closed">
+      <p class="lede">Admission is by invitation, and the entry office opens shortly. Save the date, and call again.</p>
+      <div class="invite__actions">
+        <a class="btn btn--board" href="../assets/goodput-festival-of-code.ics" download>Save the date <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <span class="tag">Entries open shortly</span>
+      </div>
+    </div>
+    <div class="invite__state" id="entry-open" hidden>
+      <p class="lede">Admission is by invitation. Send in your entry and the Secretary of the Meeting will reply.</p>
+      <div class="invite__actions">
+        <a class="btn btn--board" href="#invitation" data-invite>Request an invitation <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="invite__date" href="../assets/goodput-festival-of-code.ics" download>Save the date</a>
+      </div>
+    </div>
+    <p class="invite__line hand"><span>Goodput Festival of Code.</span> <span>Tuesday 27 and Wednesday 28 April 2027.</span> <span>Palace of Fine Arts, San Francisco.</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <div class="sheet colophon__sheet">
+    <div>
+      <p class="colophon__title hand">Colophon</p>
+      <p>Drawn in four inks by a script that imitates a ruling pen; no hand touched it. The four bars on the first chart were counted, the forecast is whatever you enter, and the record is left blank. The forecast sheet is ruled to the size of the paper, not to a prediction.</p>
+      <p>The first chart follows the form of “City and Rural Population. 1890”, coloured bars folding into a spiral, a plate from <i>The Georgia Negro: A Social Study</i>, prepared by W. E. B. Du Bois and his students at Atlanta University for the American Negro Exhibit at the 1900 Paris Exposition. The method is borrowed with admiration; the subject is our own.</p>
+      <p>Not affiliated with the Goodwood Festival of Speed or the Goodwood Estate, whose summer meeting is admired from a distance. NVIDIA and Vera Rubin are trademarks of NVIDIA Corporation. All other names belong to their owners. The portraits are illustrations in period dress and are not likenesses.</p>
+    </div>
+    <a class="colophon__top hand" href="#top">Back to the first plate</a>
+  </div>
+</footer>
+
+</body>
+</html>
