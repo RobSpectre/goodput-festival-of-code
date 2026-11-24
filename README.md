@@ -9,7 +9,7 @@ Live: https://robspectre.github.io/goodput-festival-of-code/
 ```
 docs/                  the site, served by GitHub Pages from the main branch
   index.html           the whole programme, with its plates as inline SVG
-  assets/css/          programme.css: inks, type, layout, motion
+  assets/css/          programme.css: inks, the type ramp, layout, motion
   assets/js/main.js    invitation link, fitted bill lines, the forecast dial
   assets/img/          the four driver portraits
   assets/fonts/        self-hosted faces (latin subsets)
@@ -21,6 +21,8 @@ DESIGN.md              the design system as built
 ```
 
 There is no build step. Edit the files in `docs/` and push.
+
+Type sizes come from one ramp, declared as `--t-*` custom properties at the top of `programme.css` and recorded in `DESIGN.md`. Use a ramp step, or a fluid range between two steps, rather than a new size. Lettering inside the drawings is sized on the SVG text itself, in the drawing's own units.
 
 ## Run it locally
 

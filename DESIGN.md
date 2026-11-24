@@ -29,6 +29,27 @@ typography:
     fontWeight: 400
     lineHeight: 0.9
     letterSpacing: "0.012em"
+  script:
+    fontFamily: "Yesteryear, Brush Script MT, cursive"
+    fontSize: "clamp(2.75rem, 6.1vw, 7.5rem)"
+    fontWeight: 400
+    lineHeight: 1
+  figure:
+    fontFamily: "Old Standard TT, Century Schoolbook, Georgia, serif"
+    fontSize: "2rem"
+    fontWeight: 400
+    lineHeight: 1
+  stamp:
+    fontFamily: "Hammersmith One, Gill Sans, Gill Sans MT, Trebuchet MS, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0.16em"
+  lede-l:
+    fontFamily: "Old Standard TT, Century Schoolbook, Georgia, serif"
+    fontSize: "1.5rem"
+    fontWeight: 400
+    lineHeight: 1.4
   lede:
     fontFamily: "Old Standard TT, Century Schoolbook, Georgia, serif"
     fontSize: "1.3125rem"
@@ -39,22 +60,34 @@ typography:
     fontSize: "1.1875rem"
     fontWeight: 400
     lineHeight: 1.55
+  small:
+    fontFamily: "Old Standard TT, Century Schoolbook, Georgia, serif"
+    fontSize: "1.125rem"
+    fontWeight: 400
+    lineHeight: 1.3
   caption:
     fontFamily: "Old Standard TT, Century Schoolbook, Georgia, serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.45
+  label-l:
+    fontFamily: "Hammersmith One, Gill Sans, Gill Sans MT, Trebuchet MS, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: "0.16em"
   label:
     fontFamily: "Hammersmith One, Gill Sans, Gill Sans MT, Trebuchet MS, sans-serif"
-    fontSize: "0.875rem"
+    fontSize: "0.8125rem"
     fontWeight: 400
     lineHeight: 1.35
     letterSpacing: "0.16em"
-  script:
-    fontFamily: "Yesteryear, Brush Script MT, cursive"
-    fontSize: "clamp(2.75rem, 6.1vw, 7.5rem)"
+  label-s:
+    fontFamily: "Hammersmith One, Gill Sans, Gill Sans MT, Trebuchet MS, sans-serif"
+    fontSize: "0.75rem"
     fontWeight: 400
-    lineHeight: 1
+    lineHeight: 1.1
+    letterSpacing: "0.2em"
 rounded:
   none: "0"
   roundel: "50%"
@@ -68,7 +101,7 @@ components:
   button-primary:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.yellow}"
-    typography: "{typography.label}"
+    typography: "{typography.label-l}"
     rounded: "{rounded.none}"
     padding: "0 26px"
     height: "60px"
@@ -78,7 +111,7 @@ components:
   button-on-green:
     backgroundColor: "{colors.yellow}"
     textColor: "{colors.ink}"
-    typography: "{typography.label}"
+    typography: "{typography.label-l}"
     rounded: "{rounded.none}"
     padding: "0 26px"
     height: "56px"
@@ -111,7 +144,7 @@ components:
     height: "56px"
   stamp:
     textColor: "{colors.red}"
-    typography: "{typography.label}"
+    typography: "{typography.stamp}"
     rounded: "{rounded.none}"
     padding: "11px 16px 9px"
   roundel:
@@ -184,19 +217,31 @@ A letterpress job in four inks and two paper stocks; every surface is one of the
 **Character:** A printer's type case from between the wars: one fat poster face, one tall slab for bills, one sans for labels, one bookish Modern for reading, one sign-writer's script. All are self-hosted latin subsets and all but the text face exist in a single weight, so emphasis comes from changing voice and size, not weight.
 
 ### Hierarchy
-- **Display** (400, 15.1vw fitted to the measure, line-height .84, uppercase): the cover title in vermilion, multiplied over the plate. The same face at smaller sizes sets racing numerals (roundels, the car's number), the entrant names on the insert (fitted, capped at 150px), the fat event line, the defined word (1.75rem) and the notice heading (clamp 1.75rem to 3.25rem).
-- **Headline** (400, clamp 4.5rem / 11.5vw / 10.5rem, line-height .9, uppercase, balanced): the bill line that opens every page. The coupon's runs larger (clamp 6rem / 12.4vw / 11.75rem); the cover date and event names use the same face at clamp 4rem / 7vw / 6.75rem.
-- **Title** (400, clamp 3rem / 5.4vw / 5rem, line-height .9, uppercase): driver names on the grid.
-- **Lede** (400, 1.3125rem to 1.4375rem, line-height 1.4): the opening paragraph of a page and the notice text; columns are capped at 28rem to 36rem. The record page's lede is italic in yellow at clamp 1.625rem to 2.125rem.
-- **Body** (400, 1.1875rem, line-height 1.55; 1.125rem under 700px): running text, capped at about 33rem to 34rem. Table values are 1.0625rem to 1.125rem.
-- **Caption** (italic 400, 1rem to 1.0625rem, line-height 1.45): folios, figure captions, footnotes, in the soft screened colour of the page.
-- **Label** (400, .8125rem to 1.0625rem, tracked .14em to .2em, uppercase): table terms, running head, buttons, stamps, seal and dial legends, form labels. The "Order of events" heading opens the tracking to .3em between two Oxford rules.
-- **Script** (400, clamp 2.75rem / 6.1vw / 7.5rem, rotated -2 to -4 degrees): two overlines only, on the cover and the coupon, plus the maker's name on the dial and the price on the seal. It carries a stroke in the page colour (.1em to .16em, painted under the fill) so it reads where it crosses a headline.
+The page has one ramp. Ten static steps are named tokens; four fluid roles are written out where they are used; every other fluid size runs between two values of the ramp.
+
+- **Display** (400, 15.1vw fitted to the measure, line-height .84, uppercase): the cover title in vermilion, multiplied over the plate. The same face sets racing numerals on the roundels (clamp 1rem to 1.5rem; five characters clamp .8125rem to 1.1875rem), the entrant names on the insert (clamp 3rem / 12vw / 10.5rem, fitted, capped at 150px), the fat event line and the notice heading (both clamp 1.5rem to 3rem).
+- **Headline** (400, clamp 4.5rem / 11.5vw / 10.5rem, line-height .9, uppercase, balanced): the bill line that opens every page. The coupon's keeps the same endpoints on a steeper slope (12.4vw; 23vw on phones); the cover date runs clamp 4.5rem / 7vw / 7.5rem.
+- **Title** (400, clamp 3rem / 5.4vw / 5rem, line-height .9, uppercase): driver names on the grid and the event names in the order of events. On phones the same endpoints take a steeper slope (14.5vw to 16vw).
+- **Script** (400, clamp 2.75rem / 6.1vw / 7.5rem, rotated -2 to -4 degrees): two overlines only, on the cover and the coupon (the coupon's stops at 5rem). It carries a stroke in the page colour (.1em to .16em, painted under the fill) so it reads where it crosses a headline.
+- **Figure** (2rem): the forecast figure in italic text face with tabular lining numerals, and the defined word in the poster face. The record page's italic yellow lede climbs to it (clamp 1.5rem to 2rem).
+- **Stamp** (1.5rem, label capitals, tracked .16em): the rubber stamp. This is the 24px floor for vermilion on yellow.
+- **Large lede** (1.5rem, line-height 1.35 to 1.4): the foreword's first paragraph, the address, the notice text. The "Order of events" heading is set at this step in label capitals tracked .3em between two Oxford rules, so a page-level heading outranks the block titles.
+- **Lede** (1.3125rem, line-height 1.4): the opening paragraph of a page; columns are capped at 28rem to 36rem.
+- **Body** (1.1875rem, line-height 1.55): running text, capped at about 33rem to 34rem. Under 700px body drops to the small step.
+- **Small** (1.125rem, line-height 1.3 to 1.5): table values and the definition.
+- **Caption** (1rem, usually italic, line-height 1.4 to 1.5): folios, figure captions, footnotes, hints, the colophon, in the soft screened colour of the page.
+- **Large label** (1rem, label capitals, tracked .14em to .16em): buttons, block titles, the venue line, the tracked text link.
+- **Label** (.8125rem, label capitals, tracked .13em to .16em): table terms, running head, form labels, colophon. Two labels grow from this step with the sheet: the event row (to 1rem) and the entrant trades (to 1.125rem, tracked .2em).
+- **Small label** (.75rem, label capitals): the "Detach here" tab and the running-head name on phones.
 
 ### Named Rules
 **The Five Voices Rule.** Each face has one job. Poster capitals for names and numbers, the slab for bill lines, label capitals for anything a clerk would stamp or rule, the Modern for anything read as a sentence, the script for a flourish across a headline. Do not set a sentence in the label face or a label in the text face.
 
 **The Fitted Line Rule.** A bill line marked for fitting is sized by script to fill its column on one line (less 2px), after fonts load and on resize. Under 700px the fitted event names are released to wrap at a fixed clamp. Stars between names are drawn marks that ride the line's measure.
+
+**The One Ramp Rule.** A static size is one of the ten ramp steps. A fluid size is one of the four fluid roles, or a clamp whose two ends are both values on the ramp. A new size is a new step added to the ramp on purpose, never a one-off.
+
+**The Drawn Lettering Rule.** Lettering inside a plate (seal, scrutineer's stamp, the car's number, dial, plan) is part of the drawing: it is sized as an attribute on the drawn text in the drawing's own units and scales with the plate, at one size for every width. It is not on the page ramp and is never sized from the stylesheet.
 
 **The Whole Name Rule.** The script crosses a headline at its baseline only, so every letter of the headline stays legible.
 
@@ -249,30 +294,30 @@ Marks are tilted by hand, a few degrees only: stamps -4, the scrutineer's stamp 
 ### Buttons
 One button, cut like a letterpress sort: a solid block with label capitals and a drawn arrow.
 - **Shape:** square (0), 60px tall (56px under 700px and inside the forecast form), 26px side padding, 14px gap to a 30 by 14px line arrow.
-- **Primary:** ink black block, chrome yellow label capitals at 1rem tracked .15em. Used on yellow and buff pages.
+- **Primary:** ink black block, chrome yellow label capitals at the large-label step tracked .15em. Used on yellow and buff pages.
 - **On green:** chrome yellow block, ink label. Used on the green plate.
 - **Hover:** primary turns vermilion with buff lettering; on-green turns buff. The arrow advances 6px (.25s). Colour changes take .18s on the system's one easing curve.
 - **Active:** the block drops 2px, like a pressed sort.
 - **Focus:** a 3px outline offset 3px: ink on light pages, yellow on green, the running head and the colophon.
-- **Running-head action:** a smaller yellow block (40px, 44px on phones, .8125rem), turning buff on hover.
+- **Running-head action:** a smaller yellow block (40px, 44px on phones, label step), turning buff on hover.
 
 ### Race card (dot-leader table)
-The system's table. A definition list of rows ruled 1.5px top and bottom: the term in label capitals (.8125rem, tracked .15em) at the left, a dotted leader that takes the slack, the value in the text face (1.125rem) ranged right. On the green plate the rules are soft stock. Under 700px the leader is dropped and the value sets beneath the term. A result not yet known is a ruled blank, not a placeholder figure.
+The system's table. A definition list of rows ruled 1.5px top and bottom: the term in label capitals (label step, tracked .15em) at the left, a dotted leader that takes the slack, the value in the text face (small step) ranged right. On the green plate the rules are soft stock. Under 700px the leader is dropped and the value sets beneath the term. A result not yet known is a ruled blank, not a placeholder figure.
 
 ### Bill line and event listing
 A page opens with one bill line. The order of events is a numbered list of whole-row links: a fitted bill-face name, then a row of label capitals with a leader and "Page three" plus an arrow. Hover turns the name vermilion and advances the arrow.
 
 ### Forecast field and dial
-- **Field:** no box. A transparent input with a 2px dotted buff baseline, italic text face at 2rem with tabular lining figures, yellow caret; label capitals above. It sits inside a 2px yellow frame with a yellow label heading and a soft-stock hint.
+- **Field:** no box. A transparent input with a 2px dotted buff baseline, italic text face at the figure step with tabular lining figures, yellow caret; label capitals above. It sits inside a 2px yellow frame with a yellow label heading and a soft-stock hint.
 - **Focus:** 3px yellow outline, offset 4px.
 - **Error:** the baseline turns solid yellow and the status line beneath turns yellow with a plain instruction. Messages keep the programme's voice and say what to enter.
-- **Dial:** a black face on a buff bezel with a screened outer ring, buff scale and numerals (0 to 12, times 1,000), a vermilion limit band over the last sixth, a seven-drum odometer and a vermilion needle keylined in buff. The needle steps to its value every 95ms with a little shake, easing out; it never sweeps. A forecast past the scale parks the needle just beyond the end and stamps "Off the clock" (a yellow-keylined black label that lands from 1.5 scale in .22s). On first view the dial runs up the scale and back; a saved forecast is shown instead. The forecast is kept in the visitor's own browser, and a text link in italic ("Rub it out") clears it.
+- **Dial:** a black face on a buff bezel with a screened outer ring, buff scale and numerals (0 to 12, times 1,000), a vermilion limit band over the last sixth, a seven-drum odometer and a vermilion needle keylined in buff. Its legends are drawn lettering, one size at every width. The needle steps to its value every 95ms with a little shake, easing out; it never sweeps. A forecast past the scale parks the needle just beyond the end and stamps "Off the clock" (a yellow-keylined black label that lands from 1.5 scale in .22s). On first view the dial runs up the scale and back; a saved forecast is shown instead. The forecast is kept in the visitor's own browser, and a text link in italic ("Rub it out") clears it.
 
 ### Roundel
 A racing number on a buff disc: 3px ink ring with a 1.5px keyline 4px outside, poster face numerals (a tighter, smaller setting for five characters). It overlaps the top-left of a portrait plate. The numbers are NVIDIA cluster names.
 
 ### Stamps and seal
-- **Rubber stamp:** a 4px vermilion frame with vermilion label capitals at 1.5rem, tilted -4 degrees, no fill. It keeps its size on phones and sets on two lines.
+- **Rubber stamp:** a 4px vermilion frame with vermilion label capitals at the stamp step, tilted -4 degrees, no fill. It keeps its size on phones and sets on two lines.
 - **Scrutineer's stamp:** a double vermilion ellipse with lettering on its curves and one poster-face word, tilted -9 degrees at 90% strength. Decorative; dropped under 1100px.
 - **Price seal:** a buff disc with two ink rings, lettering around the ring, and the price in vermilion script, tilted 9 degrees in the cover's bottom corner over the far colonnade. It is sized and placed in viewport units (9vw wide, .55vw from the right edge, 1.2vw from the foot) so it scales with the plate and always clears the rotunda. It lands last on load (.3s at 1.25s). Dropped under 1100px.
 
@@ -283,7 +328,7 @@ A warning board: 6px ink frame with an inner keyline, a vermilion poster-face he
 The closing page as a tear-off: yellow stock, a dashed perforation with scissors astride its top edge, a very large bill line crossed by a vermilion script, one paragraph, the button, and a ruled line of particulars in label capitals. When the entry office is closed the button saves the date and a rubber stamp says so; when it is open the stamp gives way to the invitation button and "Save the date" becomes a tracked text link.
 
 ### Navigation
-A sticky black running head: the event name in yellow label capitals with "Official Programme" in buff after a centred dot, four contents links in buff (.8125rem, tracked .14em) and the yellow action block. Links turn yellow with a 2px underline set 7px below on hover. There is no menu on small sheets; the links simply leave and the name stacks on two lines.
+A sticky black running head: the event name in yellow label capitals with "Official Programme" in buff after a centred dot, four contents links in buff (label step, tracked .14em) and the yellow action block. Links turn yellow with a 2px underline set 7px below on hover. There is no menu on small sheets; the links simply leave and the name stacks on two lines.
 
 ### Text links
 Inherit the text colour, underlined at 1.5px with a .2em offset, thickening to 3px on hover.
@@ -306,6 +351,7 @@ One easing curve, an exponential ease-out (cubic-bezier(.16, 1, .3, 1)), for eve
 - **Do** put tabular facts in a race card: label capitals, dot leader, value ranged right, 1.5px rules.
 - **Do** make tone with dot screens (5px grid at 45 degrees), hatching and knockouts, and let passes sit a pixel or two out of register.
 - **Do** keep vermilion on yellow to 24px and larger; use ink black for anything smaller on yellow.
+- **Do** take every type size from the ramp, and size lettering inside a plate in the drawing itself.
 - **Do** keep every box square and every rule in the page's text colour, at 1.5px, 2px, 3px, 5px or 6px.
 - **Do** use the yellow focus ring on green and black grounds and the ink ring on yellow, buff and salmon.
 - **Do** let a programme device carry a real fact (a roundel is a cluster name, the dial reads tokens per second), and leave an unknown result as a ruled blank.
